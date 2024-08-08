@@ -702,18 +702,384 @@ public class Variables
     [TestFixture]
     public class DoubleTests
     {
-        
+        [Test]
+        public void TestDouble_Equality_ShouldBeEqual()
+        {
+            //Arrange
+            double testDouble1 = 10.5;
+            double testDouble2 = 10.5;
+            //Act
+            //Assert
+            Assert.That(testDouble2, Is.EqualTo(testDouble1));
+        }
+
+        [Test]
+        public void TestDouble_Inequality_ShouldNotBeEqual()
+        {
+            //Arrange
+            double testDouble1 = 10.5;
+            double testDouble2 = 20.5;
+            //Act
+            //Assert
+            Assert.That(testDouble2, Is.Not.EqualTo(testDouble1));
+        }
+
+        [Test]
+        public void TestDouble_GreaterThan_ShouldReturnTrue()
+        {
+            //Arrange
+            double testDouble1 = 20.5;
+            double testDouble2 = 10.5;
+            //Act
+            bool result = testDouble1 > testDouble2;
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void TestDouble_LessThan_ShouldReturnTrue()
+        {
+            //Arrange
+            double testDouble1 = 10.5;
+            double testDouble2 = 20.5;
+            //Act
+            bool result = testDouble1 < testDouble2;
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void TestDouble_Addition_ShouldBeCorrect()
+        {
+            //Arrange
+            double testDouble1 = 10.5;
+            double testDouble2 = 20.5;
+            double expected = 31.0;
+            //Act
+            double result = testDouble1 + testDouble2;
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestDouble_Subtraction_ShouldBeCorrect()
+        {
+            //Arrange
+            double testDouble1 = 20.5;
+            double testDouble2 = 10.5;
+            double expected = 10.0;
+            //Act
+            double result = testDouble1 - testDouble2;
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestDouble_Multiplication_ShouldBeCorrect()
+        {
+            //Arrange
+            double testDouble1 = 10.5;
+            double testDouble2 = 2.0;
+            double expected = 21.0;
+            //Act
+            double result = testDouble1 * testDouble2;
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestDouble_Division_ShouldBeCorrect()
+        {
+            //Arrange
+            double testDouble1 = 21.0;
+            double testDouble2 = 2.0;
+            double expected = 10.5;
+            //Act
+            double result = testDouble1 / testDouble2;
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestDouble_Remainder_ShouldBeCorrect()
+        {
+            //Arrange
+            double testDouble1 = 22.5;
+            double testDouble2 = 10.0;
+            double expected = 2.5;
+            //Act
+            double result = testDouble1 % testDouble2;
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestDouble_NegativeValue_ShouldReturnTrue()
+        {
+            //Arrange
+            double testDouble = -10.5;
+            //Act
+            bool result = testDouble < 0;
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void TestDouble_PositiveValue_ShouldReturnTrue()
+        {
+            //Arrange
+            double testDouble = 10.5;
+            //Act
+            bool result = testDouble > 0;
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void TestDouble_Round_ShouldBeCorrect()
+        {
+            //Arrange
+            double testDouble = 10.56789;
+            double expected = 10.57;
+            //Act
+            double result = Math.Round(testDouble, 2);
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
     }
 
     [TestFixture]
     public class ByteTests
     {
-        
+        [Test]
+        public void TestByte_Equality_ShouldBeEqual()
+        {
+            //Arrange
+            byte testByte1 = 10;
+            byte testByte2 = 10;
+            //Act
+            //Assert
+            Assert.That(testByte2, Is.EqualTo(testByte1));
+        }
+
+        [Test]
+        public void TestByte_Inequality_ShouldNotBeEqual()
+        {
+            //Arrange
+            byte testByte1 = 10;
+            byte testByte2 = 20;
+            //Act
+            //Assert
+            Assert.That(testByte2, Is.Not.EqualTo(testByte1));
+        }
+
+        [Test]
+        public void TestByte_Addition_ShouldBeCorrect()
+        {
+            //Arrange
+            byte testByte1 = 10;
+            byte testByte2 = 20;
+            byte expected = 30;
+            //Act
+            byte result = (byte)(testByte1 + testByte2);
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestByte_Subtraction_ShouldBeCorrect()
+        {
+            //Arrange
+            byte testByte1 = 20;
+            byte testByte2 = 10;
+            byte expected = 10;
+            //Act
+            byte result = (byte)(testByte1 - testByte2);
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestByte_Multiplication_ShouldBeCorrect()
+        {
+            //Arrange
+            byte testByte1 = 10;
+            byte testByte2 = 2;
+            byte expected = 20;
+            //Act
+            byte result = (byte)(testByte1 * testByte2);
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestByte_Division_ShouldBeCorrect()
+        {
+            //Arrange
+            byte testByte1 = 20;
+            byte testByte2 = 2;
+            byte expected = 10;
+            //Act
+            byte result = (byte)(testByte1 / testByte2);
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestByte_Remainder_ShouldBeCorrect()
+        {
+            //Arrange
+            byte testByte1 = 22;
+            byte testByte2 = 10;
+            byte expected = 2;
+            //Act
+            byte result = (byte)(testByte1 % testByte2);
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestByte_ConvertFromInt_ShouldReturnByte()
+        {
+            //Arrange
+            int testInt = 65;
+            byte expected = 65;
+            //Act
+            byte result = (byte)testInt;
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void TestByte_ConvertToInt_ShouldReturnInt()
+        {
+            //Arrange
+            byte testByte = 65;
+            int expected = 65;
+            //Act
+            int result = testByte;
+            //Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 
     [TestFixture]
     public class DynamicTests
     {
-        
+        [Test]
+        public void TestDynamic_AssignString_ShouldBeString()
+        {
+            //Arrange
+            dynamic testDynamic = "Hello World";
+            //Act
+            string result = testDynamic;
+            //Assert
+            Assert.That(result, Is.EqualTo("Hello World"));
+        }
+
+        [Test]
+        public void TestDynamic_AssignInt_ShouldBeInt()
+        {
+            //Arrange
+            dynamic testDynamic = 123;
+            //Act
+            int result = testDynamic;
+            //Assert
+            Assert.That(result, Is.EqualTo(123));
+        }
+
+        [Test]
+        public void TestDynamic_AssignDouble_ShouldBeDouble()
+        {
+            //Arrange
+            dynamic testDynamic = 123.45;
+            //Act
+            double result = testDynamic;
+            //Assert
+            Assert.That(result, Is.EqualTo(123.45));
+        }
+
+        [Test]
+        public void TestDynamic_AssignBoolean_ShouldBeBoolean()
+        {
+            //Arrange
+            dynamic testDynamic = true;
+            //Act
+            bool result = testDynamic;
+            //Assert
+            Assert.That(result, Is.EqualTo(true));
+        }
+
+        [Test]
+        public void TestDynamic_AssignObject_ShouldBeObject()
+        {
+            //Arrange
+            dynamic testDynamic = new { Name = "John", Age = 30 };
+            //Act
+            string name = testDynamic.Name;
+            int age = testDynamic.Age;
+            //Assert
+            Assert.That(name, Is.EqualTo("John"));
+            Assert.That(age, Is.EqualTo(30));
+        }
+
+        [Test]
+        public void TestDynamic_AssignAndAddIntegers_ShouldBeCorrect()
+        {
+            //Arrange
+            dynamic testDynamic1 = 10;
+            dynamic testDynamic2 = 20;
+            //Act
+            dynamic result = testDynamic1 + testDynamic2;
+            //Assert
+            Assert.AreEqual(30, result);
+        }
+
+        [Test]
+        public void TestDynamic_AssignAndConcatenateStrings_ShouldBeCorrect()
+        {
+            //Arrange
+            dynamic testDynamic1 = "Hello";
+            dynamic testDynamic2 = " World";
+            //Act
+            dynamic result = testDynamic1 + testDynamic2;
+            //Assert
+            Assert.AreEqual("Hello World", result);
+        }
+
+        [Test]
+        public void TestDynamic_AssignAndInvokeMethod_ShouldBeCorrect()
+        {
+            //Arrange
+            dynamic testDynamic = "Hello World";
+            //Act
+            dynamic result = testDynamic.Substring(0, 5);
+            //Assert
+            Assert.AreEqual("Hello", result);
+        }
+
+        [Test]
+        public void TestDynamic_AssignAndCastToDifferentType_ShouldBeCorrect()
+        {
+            //Arrange
+            dynamic testDynamic = 123.45;
+            //Act
+            int result = (int)testDynamic;
+            //Assert
+            Assert.That(result, Is.EqualTo(123));
+        }
+
+        [Test]
+        public void TestDynamic_AssignAndUseInLambda_ShouldBeCorrect()
+        {
+            //Arrange
+            dynamic testDynamic = 5;
+            Func<dynamic, dynamic> multiplyByTwo = x => x * 2;
+            //Act
+            dynamic result = multiplyByTwo(testDynamic);
+            //Assert
+            Assert.AreEqual(10, result);
+        }
     }
 }
