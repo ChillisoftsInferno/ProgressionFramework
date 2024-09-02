@@ -1,11 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\dante d\AppData\Local\JetBrains\Rider2023.3\resharper-host\temp\Rider\vAny\CoverageData\_ProgressionFramework_Dante.-633576449\Snapshot\snapshot.utdcvr</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=149d6c23_002D6d62_002D4c59_002Da689_002D71363b7d855d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenValuesInArray_ShouldAddTotalValuesInArray_ReturnSum" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Looping+ForLoops.GivenStringValues_ShouldLoopThroughList_ReturnContainingValuesStartingWithSE&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Looping+ForLoops.GivenIntValuesInList_ShouldLoopThroughList_ReturnContainingValuesDivisibleBy5&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7f08d216_002D65ce_002D4536_002D8669_002D78b9c12323ee/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenStringValues_ShouldLoopThroughList_ReturnContainingValuesStartingWithSE" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
@@ -18,4 +13,8 @@
     &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables+Strings.TestStringLength_ShouldReturnLength&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+&lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=aeiou/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=frmr/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=jmpd/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Sedrick/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

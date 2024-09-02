@@ -1,4 +1,6 @@
-﻿namespace GlobalHelpers
+﻿using System;
+
+namespace GlobalHelpers
 {
     public class Customer
     {
@@ -7,7 +9,8 @@
 
         public Customer()
         {
-            
+            Name = string.Empty;
+            Surname = string.Empty;
         }
         public Customer(string name, string surname)
         {
