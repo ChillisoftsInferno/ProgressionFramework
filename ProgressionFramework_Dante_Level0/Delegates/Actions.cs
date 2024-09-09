@@ -1,8 +1,5 @@
 namespace ProgressionFramework_Dante_Level0.Delegates;
 
-using NUnit.Framework;
-using System;
-
 [TestFixture]
 public class Actions
 {
@@ -12,7 +9,10 @@ public class Actions
     {
         //Arrange
         bool actionExecuted = false;
-        Action action = () => { actionExecuted = true; };
+        Action action = () =>
+        {
+            actionExecuted = true;
+        };
 
         //Act
         action();
@@ -27,7 +27,10 @@ public class Actions
     {
         //Arrange
         int result = 0;
-        Action<int> action = (x) => { result = x + 5; };
+        Action<int> action = (x) =>
+        {
+            result = x + 5;
+        };
         int input = 10;
         int expected = 15;
 
@@ -44,7 +47,10 @@ public class Actions
     {
         //Arrange
         int sum = 0;
-        Action<int, int> action = (x, y) => { sum = x + y; };
+        Action<int, int> action = (x, y) =>
+        {
+            sum = x + y;
+        };
         int input1 = 10;
         int input2 = 20;
         int expected = 30;
@@ -61,15 +67,20 @@ public class Actions
     public void TestAction_ModifiesList_ShouldAddElementToList()
     {
         //Arrange
-        var list = new System.Collections.Generic.List<int>();
-        Action<int> action = (x) => { list.Add(x); };
-        int input = 10;
+        var list = new List<int>();
+        Action<int> action = (x) =>
+        {
+            x += x;
+            list.Add(x);
+        };
+        int input = 20;
+        int expected = 40;
 
         //Act
         action(input);
 
         //Assert
-        Assert.Contains(input, list);
+        Assert.Contains(expected, list);
     }
 
     // Confirms that an Action can throw an exception when required.
@@ -77,7 +88,10 @@ public class Actions
     public void TestAction_ThrowsException_ShouldThrowExpectedException()
     {
         //Arrange
-        Action action = () => { throw new InvalidOperationException("Test Exception"); };
+        Action action = () =>
+        {
+            throw new InvalidOperationException("Test Exception");
+        };
 
         //Act & Assert
         Assert.Throws<InvalidOperationException>(() => action());

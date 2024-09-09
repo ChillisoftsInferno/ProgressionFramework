@@ -1,3 +1,6 @@
+using ProgressionFramework_Dante_Level0.HelperClasses.Animals;
+using ProgressionFramework_Dante_Level0.InterfaceHelpers;
+
 namespace ProgressionFramework_Dante_Level0.Interfaces;
 
 using NUnit.Framework;
@@ -92,51 +95,6 @@ public class Interfaces
 
         //Assert
         Assert.That(actualName, Is.EqualTo(expectedName));
-    }
-}
-
-// Example interfaces and classes used in the tests
-public interface IAnimal
-{
-    string Name { get; set; }
-    string MakeSound();
-}
-
-public interface IWalker
-{
-    string Walk();
-}
-
-public class Dog : IAnimal, IWalker
-{
-    public string Name { get; set; } = "Buddy";
-
-    public string MakeSound()
-    {
-        return "Woof!";
-    }
-
-    public string Walk()
-    {
-        return "Dog is walking";
-    }
-}
-
-public class Cat : IAnimal
-{
-    public string Name { get; set; } = "Kitty";
-
-    public string MakeSound()
-    {
-        return "Meow!";
-    }
-}
-
-public class AnimalHandler
-{
-    public string HandleAnimal(IAnimal animal)
-    {
-        return $"Handling animal: {animal.MakeSound()}";
     }
 }
 

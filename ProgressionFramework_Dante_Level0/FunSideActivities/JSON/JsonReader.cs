@@ -101,14 +101,14 @@ public class Dialogue
     public string Text { get; set; }
 }
 
-public class Context
-{
-    public int ContextId { get; set; }
-    public string Setting { get; set; }
-    public string Backstory { get; set; }
-    public string Development { get; set; }
-    public string Extra { get; set; }
-}
+// public class Context
+// {
+//     public int ContextId { get; set; }
+//     public string Setting { get; set; }
+//     public string Backstory { get; set; }
+//     public string Development { get; set; }
+//     public string Extra { get; set; }
+// }
 
 public class NodeValues
 {

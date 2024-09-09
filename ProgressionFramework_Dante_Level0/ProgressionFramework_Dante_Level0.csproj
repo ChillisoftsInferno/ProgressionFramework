@@ -19,11 +19,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Generics\" />
-      <Folder Include="Inheritance&amp;Polymorphism\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\GlobalHelpers\GlobalHelpers.csproj" />
     </ItemGroup>
 

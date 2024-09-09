@@ -1,8 +1,5 @@
 namespace ProgressionFramework_Dante_Level0.Delegates;
 
-using NUnit.Framework;
-using System;
-
 [TestFixture]
 public class Functions
 {
