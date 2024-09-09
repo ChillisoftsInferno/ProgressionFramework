@@ -1,10 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\dante d\AppData\Local\JetBrains\Rider2023.3\resharper-host\temp\Rider\vAny\CoverageData\_ProgressionFramework_Dante.-633576449\Snapshot\snapshot.utdcvr</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7f08d216_002D65ce_002D4536_002D8669_002D78b9c12323ee/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenStringValues_ShouldLoopThroughList_ReturnContainingValuesStartingWithSE" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7f08d216_002D65ce_002D4536_002D8669_002D78b9c12323ee/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GivenStringValues_ShouldLoopThroughList_ReturnContainingValuesStartingWithSE" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d6284d46_002D506a_002D4b55_002Dadd2_002D2cac2e7253d8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Looping" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d6284d46_002D506a_002D4b55_002Dadd2_002D2cac2e7253d8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Looping" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Looping&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables+Strings.GivenAWord_TestHowManySpecificCharactersAreInWord_ReturnNewStringContainingOnlyCharacters&lt;/TestId&gt;&#xD;
@@ -12,6 +12,7 @@
     &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables+Strings.GivenASentence_TestVowelsInSentence_ReturnNewStringContainingNoVowelsInOrderIncludingSpaces&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables+Strings.TestStringLength_ShouldReturnLength&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Operators+OperatorTests.TestOperator_LogicalOr_ShouldReturnTrueIfEitherTrue&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=aeiou/@EntryIndexedValue">True</s:Boolean>

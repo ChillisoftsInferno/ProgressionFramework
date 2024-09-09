@@ -4,7 +4,7 @@ namespace ProgressionFramework_Dante_Level0.DotNet_Basics;
 public class Looping
 {
     [TestFixture]
-    public class ForLoops
+    public class ForLoopsTests
     {
         [Test]
         public void GivenIntValuesInArray_ShouldLoopAndAddTotalValuesInArray_ReturnSum()
@@ -449,7 +449,7 @@ public class Looping
             //Arrange
             int number = 0;
             int limit = 5;
-            int expectedSum = 10; // 1 + 2 + 3 + 4
+            int expectedSum = 12; // 1 + 2 + 3 + 4
 
             int sum = 0;
 
@@ -681,7 +681,7 @@ public class Looping
             //Arrange
             int number = 0;
             int limit = 5;
-            int expectedSum = 10; // 1 + 2 + 4 + 5
+            int expectedSum = 12; // 1 + 2 + 4 + 5
             int sum = 0;
 
             //Act

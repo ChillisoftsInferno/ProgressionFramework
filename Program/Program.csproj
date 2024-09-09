@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GlobalHelpers\GlobalHelpers.csproj" />
+      <ProjectReference Include="..\ProgressionFramework_Dante_Level0\ProgressionFramework_Dante_Level0.csproj" />
+    </ItemGroup>
+
+</Project>

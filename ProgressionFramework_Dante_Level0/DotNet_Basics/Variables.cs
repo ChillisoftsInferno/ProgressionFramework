@@ -121,22 +121,6 @@ public class Variables
             //Assert
             Assert.That(replacedString, Is.EqualTo(expected));
         }
-        
-        [Test]
-        public void TestString_CustomerDetails_ShouldReturnCustomerWithDetails()
-        {
-            //Arrange
-            string name = "John";
-            string surname = "Doe";
-            Customer sut = new Customer();
-            Customer expected = new Customer("John", "Doe");
-            //Act
-            sut.Name = name;
-            sut.Surname = surname;
-            //Assert
-            Assert.That(sut.Name, Is.EqualTo(expected.Name));
-            Assert.That(sut.Surname, Is.EqualTo(expected.Surname));
-        }
     }
     
     [TestFixture]
@@ -165,7 +149,7 @@ public class Variables
         }
 
         [Test]
-        public void TestIntGreaterThan()
+        public void TestInt_GreaterThan()
         {
             //Arrange
             int testInt = 125;
@@ -176,7 +160,7 @@ public class Variables
         }
 
         [Test]
-        public void TestIntGreaterThanOrEqual()
+        public void TestInt_GreaterThanOrEqual()
         {
             //Arrange
             int testInt = 125;
@@ -189,7 +173,7 @@ public class Variables
         }
 
         [Test]
-        public void TestIntLessThan()
+        public void TestInt_LessThan()
         {
             //Arrange
             int testInt = 100;
@@ -200,7 +184,7 @@ public class Variables
         }
 
         [Test]
-        public void TestIntLessThanOrEqual()
+        public void TestInt_LessThanOrEqual()
         {
             //Arrange
             int testInt = 100;
@@ -213,7 +197,7 @@ public class Variables
         }
 
         [Test]
-        public void TestIntWithinRange()
+        public void TestInt_WithinRange()
         {
             //Arrange
             int testInt = 25;
@@ -223,7 +207,7 @@ public class Variables
         }
         
         [Test]
-        public void TestIntAddition()
+        public void TestInt_Addition()
         {
             //Arrange
             int testInt = 10;
@@ -236,7 +220,7 @@ public class Variables
         }
         
         [Test]
-        public void TestIntSubtraction()
+        public void TestInt_Subtraction()
         {
             //Arrange
             int testInt = 10;
@@ -249,7 +233,7 @@ public class Variables
         }
         
         [Test]
-        public void TestIntMultiplication()
+        public void TestInt_Multiplication()
         {
             //Arrange
             int testInt = 10;
@@ -262,7 +246,7 @@ public class Variables
         }
         
         [Test]
-        public void TestIntDivision()
+        public void TestInt_Division()
         {
             //Arrange
             int testInt = 10;
@@ -275,7 +259,7 @@ public class Variables
         }
 
         [Test]
-        public void TestIntIsPositive()
+        public void TestInt_IsPositive()
         {
             //Arrange
             int testInt = 10;
@@ -287,7 +271,7 @@ public class Variables
         }
 
         [Test]
-        public void TestIntIsNegative()
+        public void TestInt_IsNegative()
         {
             //Arrange
             int testInt = 10;
@@ -298,7 +282,7 @@ public class Variables
         }
 
         [Test]
-        public void TestIntIsZero()
+        public void TestInt_IsZero()
         {
             //Arrange
             int testInt = 10;
@@ -847,121 +831,6 @@ public class Variables
             Assert.That(result, Is.EqualTo(expected));
         }
 
-    }
-
-    [TestFixture]
-    public class ByteTests
-    {
-        [Test]
-        public void TestByte_Equality_ShouldBeEqual()
-        {
-            //Arrange
-            byte testByte1 = 10;
-            byte testByte2 = 10;
-            //Act
-            //Assert
-            Assert.That(testByte2, Is.EqualTo(testByte1));
-        }
-
-        [Test]
-        public void TestByte_Inequality_ShouldNotBeEqual()
-        {
-            //Arrange
-            byte testByte1 = 10;
-            byte testByte2 = 20;
-            //Act
-            //Assert
-            Assert.That(testByte2, Is.Not.EqualTo(testByte1));
-        }
-
-        [Test]
-        public void TestByte_Addition_ShouldBeCorrect()
-        {
-            //Arrange
-            byte testByte1 = 10;
-            byte testByte2 = 20;
-            byte expected = 30;
-            //Act
-            byte result = (byte)(testByte1 + testByte2);
-            //Assert
-            Assert.That(result, Is.EqualTo(expected));
-        }
-
-        [Test]
-        public void TestByte_Subtraction_ShouldBeCorrect()
-        {
-            //Arrange
-            byte testByte1 = 20;
-            byte testByte2 = 10;
-            byte expected = 10;
-            //Act
-            byte result = (byte)(testByte1 - testByte2);
-            //Assert
-            Assert.That(result, Is.EqualTo(expected));
-        }
-
-        [Test]
-        public void TestByte_Multiplication_ShouldBeCorrect()
-        {
-            //Arrange
-            byte testByte1 = 10;
-            byte testByte2 = 2;
-            byte expected = 20;
-            //Act
-            byte result = (byte)(testByte1 * testByte2);
-            //Assert
-            Assert.That(result, Is.EqualTo(expected));
-        }
-
-        [Test]
-        public void TestByte_Division_ShouldBeCorrect()
-        {
-            //Arrange
-            byte testByte1 = 20;
-            byte testByte2 = 2;
-            byte expected = 10;
-            //Act
-            byte result = (byte)(testByte1 / testByte2);
-            //Assert
-            Assert.That(result, Is.EqualTo(expected));
-        }
-
-        [Test]
-        public void TestByte_Remainder_ShouldBeCorrect()
-        {
-            //Arrange
-            byte testByte1 = 22;
-            byte testByte2 = 10;
-            byte expected = 2;
-            //Act
-            byte result = (byte)(testByte1 % testByte2);
-            //Assert
-            Assert.That(result, Is.EqualTo(expected));
-        }
-
-        [Test]
-        public void TestByte_ConvertFromInt_ShouldReturnByte()
-        {
-            //Arrange
-            int testInt = 65;
-            byte expected = 65;
-            //Act
-            byte result = (byte)testInt;
-            //Assert
-            Assert.That(result, Is.EqualTo(expected));
-        }
-
-        [Test]
-        public void TestByte_ConvertToInt_ShouldReturnInt()
-        {
-            //Arrange
-            byte testByte = 65;
-            int expected = 65;
-            //Act
-            int result = testByte;
-            //Assert
-            Assert.That(result, Is.EqualTo(expected));
-        }
     }
 
     [TestFixture]

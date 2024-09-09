@@ -19,10 +19,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Classes\" />
       <Folder Include="Generics\" />
       <Folder Include="Inheritance&amp;Polymorphism\" />
-      <Folder Include="Interfaces\" />
     </ItemGroup>
 
     <ItemGroup>

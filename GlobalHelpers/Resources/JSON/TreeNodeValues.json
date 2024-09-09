@@ -1,0 +1,63 @@
+
+[
+  {
+    "nodeId": 1,
+    "firstValue": 67,
+    "secondValue": 563
+  },
+  {
+    "nodeId": 2,
+    "firstValue": 995,
+    "secondValue": 321
+  },
+  {
+    "nodeId": 3,
+    "firstValue": 23,
+    "secondValue": 711
+  },
+  {
+    "nodeId": 4,
+    "firstValue": 387,
+    "secondValue": 173
+  },
+  {
+    "nodeId": 5,
+    "firstValue": 228,
+    "secondValue": 329
+  },
+  {
+    "nodeId": 6,
+    "firstValue": 32,
+    "secondValue": 751
+  },
+  {
+    "nodeId": 7,
+    "firstValue": 841,
+    "secondValue": 440
+  },
+  {
+    "nodeId": 8,
+    "firstValue": 497,
+    "secondValue": 311
+  },
+  {
+    "nodeId": 9,
+    "firstValue": 23,
+    "secondValue": 711
+  },
+  {
+    "nodeId": 10,
+    "firstValue": 855,
+    "secondValue": 670
+  },
+  {
+    "nodeId": 11,
+    "firstValue": 776,
+    "secondValue": 469
+  },
+  {
+    "nodeId": 12,
+    "firstValue": 984,
+    "secondValue": 472
+  }
+]

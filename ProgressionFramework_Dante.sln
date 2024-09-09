@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressionFramework_Dante_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalHelpers", "GlobalHelpers\GlobalHelpers.csproj", "{C459AAA3-526C-401B-9F08-81EC4ED5C470}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{4B78C374-D38F-4A84-B959-081602B11BB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{C459AAA3-526C-401B-9F08-81EC4ED5C470}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C459AAA3-526C-401B-9F08-81EC4ED5C470}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C459AAA3-526C-401B-9F08-81EC4ED5C470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B78C374-D38F-4A84-B959-081602B11BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B78C374-D38F-4A84-B959-081602B11BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B78C374-D38F-4A84-B959-081602B11BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B78C374-D38F-4A84-B959-081602B11BB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
