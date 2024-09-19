@@ -1,4 +1,6 @@
-﻿using ProgressionFramework_Dante_Level0.FunSiteActivities.JSON;
+﻿using GlobalHelpers;
+using ProgressionFramework_Dante_Level0.FunSideActivities.Hashing;
+using ProgressionFramework_Dante_Level0.FunSideActivities.JSON;
 
 namespace Program;
 
@@ -6,10 +8,24 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-        JsonReader jsonReader = new JsonReader();
-        jsonReader.LoadJson();
-        RunDialogue(jsonReader);
-        RunTreeDataStructure(jsonReader);
+        //JSON and Tree Data Structure
+        //JsonReader jsonReader = new JsonReader();
+        //jsonReader.LoadJson();
+        //RunDialogue(jsonReader);
+        //RunTreeDataStructure(jsonReader);
+        
+        //Creating Hash Codes
+        Hasher hasher = new Hasher(5);
+        hasher.SetIsGenerate(true);
+        while (hasher.GetIsGenerating())
+        {
+            var result = Console.ReadLine();
+            while (string.IsNullOrEmpty(result))
+            {
+                result = Console.ReadLine();
+            }
+            hasher.ConvertToHashCode(result);    
+        }
     }
 
     private static void RunDialogue(JsonReader jsonReader)
@@ -17,6 +33,8 @@ public static class Program
         
         var dialogueSets = jsonReader.GetDialogueSets();
         Console.Clear();
+        Console.ReadKey(true);
+        Console.WriteLine($"Backstory: {dialogueSets[0].Context.Backstory}\n");
         foreach(var set in dialogueSets)
         {
             Console.WriteLine($"Dialogue Set Id: {set.DialogueSetId}\n");
@@ -27,6 +45,17 @@ public static class Program
             }
             Console.WriteLine();
 
+            var context = new Context
+            {
+                ContextId = set.Context.ContextId,
+                Setting = set.Context.Setting,
+                Backstory = set.Context.Backstory,
+                Development = set.Context.Development,
+                Extra = set.Context.Extra
+            };
+
+            Console.WriteLine($"Setting: {context.Setting}\n");
+            
             foreach (var dialogue in set.Dialogues)
             {
                 string? characterName = set.Characters
@@ -53,6 +82,8 @@ public static class Program
                     );
                 }
             }
+            Console.WriteLine($"Development: {context.Development}\n");
+            Console.WriteLine($"Extra: {context.Extra}\n");
         }
         Console.ReadLine();
     }

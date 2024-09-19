@@ -1,21 +1,12 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this
-
-using FluentAssertions.Equivalency;
 using GlobalHelpers;
 using Newtonsoft.Json;
 
-namespace ProgressionFramework_Dante_Level0.FunSiteActivities.JSON;
+namespace ProgressionFramework_Dante_Level0.FunSideActivities.JSON;
 
 public class JsonReader
 {
-    private List<DialogueSet> _dialogueSets;
-    private Tree<NodeValues> _treeDataStructure;
-
-    public JsonReader()
-    {
-        _dialogueSets = new List<DialogueSet>();
-    }
+    private List<DialogueSet> _dialogueSets = new();
+    private Tree<NodeValues> _treeDataStructure = null!;
 
     public void LoadJson()
     {
@@ -55,30 +46,10 @@ public class JsonReader
             _treeDataStructure.Add(data[i]);
         }
     }
-    
-    // private TreeDataStructure<Node<NodeValues>> AssignTreeDataStructureValuesBasedOnSecondValue(TreeDataStructure<Node<NodeValues>> tree, List<NodeValues> data)
-    // {
-    //     foreach (var item in data)
-    //     {
-    //         if (item.NodeId == tree.Root.Data.Data.NodeId) continue;
-    //         if(item.FirstValue)
-    //     }
-    //     return tree;
-    // }
-    //
-    // private TreeDataStructure<Node<NodeValues>> AssignTreeDataStructureValuesBasedOnCombinedValues(TreeDataStructure<Node<NodeValues>> tree, List<NodeValues> data)
-    // {
-    //     foreach (var item in data)
-    //     {
-    //         if (item.NodeId == tree.Root.Data.Data.NodeId) continue;
-    //         if(item.FirstValue)
-    //     }
-    //     return tree;
-    // }
 
     public List<DialogueSet> GetDialogueSets() => _dialogueSets;
 
-    public Tree<NodeValues> GetTreeDataStructure() => _treeDataStructure;
+    public Tree<NodeValues> GetTreeDataStructure() => _treeDataStructure ?? throw new ArgumentNullException("", "Tree data structure was null.");
 }
     
 public class DialogueSet
@@ -86,6 +57,7 @@ public class DialogueSet
     public int DialogueSetId { get; set; }
     public Character[] Characters { get; set; }
     public Dialogue[] Dialogues { get; set; }
+    public Context Context { get; set; }
 }
 
 public class Character
@@ -101,14 +73,14 @@ public class Dialogue
     public string Text { get; set; }
 }
 
-// public class Context
-// {
-//     public int ContextId { get; set; }
-//     public string Setting { get; set; }
-//     public string Backstory { get; set; }
-//     public string Development { get; set; }
-//     public string Extra { get; set; }
-// }
+public class Context
+{
+    public int ContextId { get; set; }
+    public string Setting { get; set; }
+    public string Backstory { get; set; }
+    public string Development { get; set; }
+    public string Extra { get; set; }
+}
 
 public class NodeValues
 {
