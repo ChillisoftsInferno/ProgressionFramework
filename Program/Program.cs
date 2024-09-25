@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using GlobalHelpers;
+using ProgressionFramework_Dante_Level0.FunSideActivities.Enums;
 using ProgressionFramework_Dante_Level0.FunSideActivities.Hashing;
 using ProgressionFramework_Dante_Level0.FunSideActivities.JSON;
 
@@ -16,7 +17,13 @@ public static class Program
         //RunTreeDataStructure(jsonReader);
         
         //Creating Hash Codes
-        RunHashsetExample();
+        //RunHashsetExample();
+        
+        //Using extension methods on enums
+        // Console.WriteLine(EnumHelper.RandomizeStatus().Value());
+        // Console.WriteLine(EnumHelper.RandomizeStatus().Value());
+        // Console.WriteLine(EnumHelper.RandomizeStatus().Value());
+        // Console.WriteLine(EnumHelper.RandomizeStatus().Value());
     }
 
     private static void RunDialogue(JsonReader jsonReader)
@@ -112,7 +119,7 @@ public static class Program
     private static void RunHashsetExample()
     {
         Console.WriteLine("Random generated hashed entries.");
-        Hasher hasher = new Hasher(5,true,10, 8);
+        Hasher hasher = new Hasher(5,false,10, 8);
         hasher.SetIsGenerating(true);
         Console.WriteLine();
         

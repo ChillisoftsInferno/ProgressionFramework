@@ -15,7 +15,7 @@ public class Hasher
     private readonly Random _randomizer = new();
     private readonly Encoding _ascii;
     private readonly bool _hasFinishedSetup;
-    private readonly bool _isStandardized;
+    private readonly bool _isStandardized; //Will remove characters that aren't letters and numbers from an entry
     private readonly int _codeLength;
     private readonly int _maxHashes;
     
@@ -111,14 +111,14 @@ public class Hasher
             Console.WriteLine("Hash Operation Failure: Already exists within the current HashSet, please retry...");
             return;
         }
-
+        
+        string entry = tmpSource.CreateNewEntry();
         if (_hasFinishedSetup)
         {
             _currentHashes++;
+            entry = RemoveUnauthorizedCharacters(entry);
         }
         
-        string entry = tmpSource.CreateNewEntry();
-        entry = RemoveUnauthorizedTokens(entry);
         Console.WriteLine($"HashCode: [{entry}] - Data: [{data}]");
         _hashes.Add(entry);
         if(_currentHashes >= _maxHashes) SetIsGenerating(false);
@@ -136,19 +136,17 @@ public class Hasher
         }
     }
 
-    private string RemoveUnauthorizedTokens(string data)
+    private string RemoveUnauthorizedCharacters(string data)
     {
-        if (!_hasFinishedSetup) return data;
         if (!_isStandardized) return data;
-        string result = data;
+        
         List<byte> value = data.ConvertToByteArray().ToList();
         for (int i = 0; i < value.Count; i++)
         {
             if(IsNumber(value[i]) || IsLetter(value[i])) continue;
             value.Remove(value[i]);
         }
-        
-        return result;
+        return value.ToArray().CreateNewEntry();
     }
 
     private bool IsNumber(int value)
