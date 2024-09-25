@@ -1,105 +1,165 @@
-using System;
 using System.Text;
-using System.Security.Cryptography;
 
 namespace ProgressionFramework_Dante_Level0.FunSideActivities.Hashing;
 
 public class Hasher
 {
-    private string sSourceData;
-    private byte[] tmpSource;
-    private byte[] tmpHash;
-    private bool isGenerating;
-    private int _maxHashes;
+    private const int StandardCodeLength = 4;
+    private const int LowestNumberAsciiCode = 48;
+    private const int HighestNumberAsciiCode = 57;
+    private const int LowestLetterAsciiCode = 65;
+    private const int HighestLetterAsciiCode = 90;
+    private const int NumberProbability = 59;
+    
+    private readonly HashSet<string> _hashes = [];
+    private readonly Random _randomizer = new();
+    private readonly Encoding _ascii;
+    private readonly bool _hasFinishedSetup;
+    private readonly bool _isStandardized;
+    private readonly int _codeLength;
+    private readonly int _maxHashes;
+    
+    private bool _isGenerating;
     private int _currentHashes;
-    private HashSet<string> hashes = new HashSet<string>();
-    private Random randomizer = new Random();
 
-    public Hasher(int maxHashes)
+    public Hasher(int maxHashes, bool isStandardized = false, int randomHashes = 0, int randomHashLength = StandardCodeLength)
     {
-        _maxHashes = maxHashes;
+        _ascii = new UTF8Encoding();
         _currentHashes = 0;
-        int count = 0;
-        while (count < 999)
-        {
-            ConvertToHashCode(CodeRandomizer(4));
-            count++;
-        }
+
+        _maxHashes = maxHashes;
+        _isStandardized = isStandardized;
+        _codeLength = randomHashLength;
+        
+        CreateRandomHashedEntries(randomHashes);
+
+        _hasFinishedSetup = true;
     }
 
-    public string CodeRandomizer(int codeLength)
+    private string CodeRandomizer(int codeLength)
     {
         string code = "";
         int count = 0;
         while (count < codeLength)
         {
-            switch (randomizer.Next(0, 1))
+            if(ShouldDivide(count))
             {
-                case 0:
-                    code += GetRandomNumber();
+                if (count == _codeLength)
+                {
                     break;
-                case 1:
-                    code += GetRandomLetter();
-                    break;
+                }
+                code += "-";
             }
+
+            code += _randomizer.Next(0, 101) <= NumberProbability ? GetRandomNumber() : GetRandomLetter();
             count++;
         }
         return code;
     }
-    
-    public string GetCodeByHash
+
+    private bool ShouldDivide(int currentPos)
+    {
+        if (currentPos != 0 && currentPos % 4 == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public string GetCodeByHash(string code)
+    {
+        string value = code.Replace('.', ' ');
+        string decoded = _ascii.GetString(_ascii.GetBytes(value));
+        
+        foreach (string entry in _hashes)
+        {
+            string entryDecoded = _ascii.GetString(_ascii.GetBytes(entry)).Replace('.', ' ');
+            if(decoded != entryDecoded) continue;
+            byte[] decodedArr = decoded.ConvertToByteArray();
+            
+            if (decodedArr.ExistsInHashSet(_hashes, _ascii))
+            {
+                return _ascii.GetString(decodedArr);
+            }
+        }
+
+        return $"This entry [{code}] does not exist with the HashSet.";
+    }
 
     private string GetRandomNumber()
     {
-        char number = (char)randomizer.Next(48, 57);
+        char number = (char)_randomizer.Next(LowestNumberAsciiCode, HighestNumberAsciiCode + 1);
         return number.ToString();
     }
 
     private string GetRandomLetter()
     {
-        char letter = (char)randomizer.Next(65, 90);
+        char letter = (char)_randomizer.Next(LowestLetterAsciiCode, HighestLetterAsciiCode + 1);
         return letter.ToString();
     }
 
-    public string GetRandomCode()
-    {
-        string code = "AS87U-IL59P";
-        return code;
-    }
+    public bool GetIsGenerating() => _isGenerating;
 
-    public bool GetIsGenerating() => isGenerating;
-
-    public void SetIsGenerate(bool value)
-    {
-        isGenerating = value;
-    }
+    public void SetIsGenerating(bool value) => _isGenerating = value;
     
     public void ConvertToHashCode(string data)
     {
-        tmpSource = Encoding.ASCII.GetBytes(data);
-        tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
-        string hashCode = ByteArrayToString(tmpHash);
-        if (hashCode.ExistsInSet(hashes))
+        byte[] tmpSource = _ascii.GetBytes(data);
+        
+        if (tmpSource.ExistsInHashSet(_hashes, _ascii))
         {
             Console.WriteLine("Hash Operation Failure: Already exists within the current HashSet, please retry...");
             return;
-        } 
-        _currentHashes++;
-        Console.WriteLine($"HashCode: [{hashCode}] - Data: [{data}]");
-        hashes.Add(hashCode);
-        if(_currentHashes >= _maxHashes) SetIsGenerate(false);
+        }
+
+        if (_hasFinishedSetup)
+        {
+            _currentHashes++;
+        }
+        
+        string entry = tmpSource.CreateNewEntry();
+        entry = RemoveUnauthorizedTokens(entry);
+        Console.WriteLine($"HashCode: [{entry}] - Data: [{data}]");
+        _hashes.Add(entry);
+        if(_currentHashes >= _maxHashes) SetIsGenerating(false);
     }
 
-    public string ByteArrayToString(byte[] arrInput)
+    private void CreateRandomHashedEntries(int randomHashes)
     {
-        int i;
-        StringBuilder sOutput = new StringBuilder(arrInput.Length);
-        for (i = 0; i < arrInput.Length; i++)
+        if(randomHashes == 0) return;
+
+        int count = 0;
+        while (count < randomHashes)
         {
-            sOutput.Append(arrInput[i].ToString("X2"));
+            ConvertToHashCode(CodeRandomizer(_codeLength));
+            count++;
         }
-        return sOutput.ToString();
+    }
+
+    private string RemoveUnauthorizedTokens(string data)
+    {
+        if (!_hasFinishedSetup) return data;
+        if (!_isStandardized) return data;
+        string result = data;
+        List<byte> value = data.ConvertToByteArray().ToList();
+        for (int i = 0; i < value.Count; i++)
+        {
+            if(IsNumber(value[i]) || IsLetter(value[i])) continue;
+            value.Remove(value[i]);
+        }
+        
+        return result;
+    }
+
+    private bool IsNumber(int value)
+    {
+        if(value is >= LowestNumberAsciiCode and <= HighestNumberAsciiCode) return true;
+        return false;
     }
     
-    
+    private bool IsLetter(int value)
+    {
+        if(value is >= LowestLetterAsciiCode and <= HighestLetterAsciiCode) return true;
+        return false;
+    }
 }

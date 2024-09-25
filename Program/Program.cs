@@ -1,4 +1,5 @@
-﻿using GlobalHelpers;
+﻿using System.Diagnostics.CodeAnalysis;
+using GlobalHelpers;
 using ProgressionFramework_Dante_Level0.FunSideActivities.Hashing;
 using ProgressionFramework_Dante_Level0.FunSideActivities.JSON;
 
@@ -15,17 +16,7 @@ public static class Program
         //RunTreeDataStructure(jsonReader);
         
         //Creating Hash Codes
-        Hasher hasher = new Hasher(5);
-        hasher.SetIsGenerate(true);
-        while (hasher.GetIsGenerating())
-        {
-            var result = Console.ReadLine();
-            while (string.IsNullOrEmpty(result))
-            {
-                result = Console.ReadLine();
-            }
-            hasher.ConvertToHashCode(result);    
-        }
+        RunHashsetExample();
     }
 
     private static void RunDialogue(JsonReader jsonReader)
@@ -103,16 +94,41 @@ public static class Program
         Console.ReadLine();
     }
 
-    // private static List<NodeValues>? GetChildren(Tree<NodeValues> tree, int depth)
-    // {
-    //     var children = new List<NodeValues>();
-    //     var node = tree.Root.Value.FindById(tree.Root, depth);
-    //     if (node != null)
-    //     {
-    //         if(node.Left != null) children.Add(node.Left.Value);
-    //         if(node.Right != null) children.Add(node.Right.Value);
-    //     }
-    //
-    //     return children;
-    // }
+    // TODO: Needs work
+    // Not being used
+    private static List<NodeValues>? GetChildren(Tree<NodeValues> tree, int depth)
+    {
+        var children = new List<NodeValues>();
+        var node = tree.Root.Value.FindById(tree.Root, depth);
+        if (node != null)
+        {
+            if(node.Left != null) children.Add(node.Left.Value);
+            if(node.Right != null) children.Add(node.Right.Value);
+        }
+    
+        return children;
+    }
+
+    private static void RunHashsetExample()
+    {
+        Console.WriteLine("Random generated hashed entries.");
+        Hasher hasher = new Hasher(5,true,10, 8);
+        hasher.SetIsGenerating(true);
+        Console.WriteLine();
+        
+        Console.WriteLine("Generate your own hash codes with custom input data.");
+        while (hasher.GetIsGenerating())
+        {
+            string result = CustomConsole.Ensure().ToUpper();
+            hasher.ConvertToHashCode(result);    
+        }
+        Console.WriteLine();
+
+        Console.WriteLine("Now retrieve the data by entering a hashed code.");
+        while (true)
+        {
+            string convertedData = CustomConsole.Ensure();
+            Console.WriteLine($"Data: {hasher.GetCodeByHash(convertedData)}");
+        }
+    }
 }
