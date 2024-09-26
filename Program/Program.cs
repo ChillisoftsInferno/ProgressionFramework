@@ -1,8 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using GlobalHelpers;
-using ProgressionFramework_Dante_Level0.FunSideActivities.Enums;
-using ProgressionFramework_Dante_Level0.FunSideActivities.Hashing;
+﻿using GlobalHelpers;
 using ProgressionFramework_Dante_Level0.FunSideActivities.JSON;
+using ProgressionFramework_Dante_Level0.FunSideActivities.Hashing;
 
 namespace Program;
 
@@ -17,7 +15,7 @@ public static class Program
         //RunTreeDataStructure(jsonReader);
         
         //Creating Hash Codes
-        //RunHashsetExample();
+        RunHashsetExample();
         
         //Using extension methods on enums
         // Console.WriteLine(EnumHelper.RandomizeStatus().Value());
@@ -136,6 +134,8 @@ public static class Program
         {
             string convertedData = CustomConsole.Ensure();
             Console.WriteLine($"Data: {hasher.GetCodeByHash(convertedData)}");
+            Console.WriteLine("Press 'Enter' to search for another value and 'Q' to quit.");
+            if (Console.ReadKey(true).Key == ConsoleKey.Q) break;
         }
     }
 }
