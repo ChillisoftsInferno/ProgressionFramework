@@ -83,7 +83,7 @@ public class Hasher
             }
         }
 
-        return $"This entry [{code}] does not exist with the HashSet.";
+        return $"This entry [{code}] does not exist within the HashSet.";
     }
 
     private string GetRandomNumber()
