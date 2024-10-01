@@ -4,14 +4,20 @@ public class Drawing
 {
     public Map Map { get; set; }
 
-    public string DrawMap()
+    public Drawing(Map map)
     {
-        for (int y = 0; y < Map.Height; y++)
+        Map = map;
+    }
+
+    public void DrawMap()
+    {
+        for (int x = 0; x < Map.Width; x++)
         {
-            for (int x = 0; x < Map.Height; x++)
+            for (int y = 0; y < Map.Height; y++)
             {
-                Console.Write();
+                Console.Write(Map.Cells[x, y].DrawCell());
             }
+            Console.WriteLine();
         }
     }
 }
