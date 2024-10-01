@@ -27,7 +27,7 @@ public static class GameOfLifeProgram
         
         s_gameManager = new GameManager(s_map);
         s_gameManager.SetCellPositions();
-        s_gameManager.SetStartingCells(SetStartingPositions());
+        s_gameManager.SetStartingCells(SetSecondStartingPositions());
 
         s_startingPositions = new List<Position>();
 
@@ -62,6 +62,7 @@ public static class GameOfLifeProgram
             
             Console.WriteLine($"Generation: {generationCount}");
             Console.WriteLine($"Population: {populationCount}");
+            if(populationCount <= 0) break;
             
             s_map.ResetCellsBorn();
             s_map.ResetCellsDied();
@@ -123,6 +124,19 @@ public static class GameOfLifeProgram
             new (10,4),
             new (11,3),
             new (11,4),
+        };
+    }
+
+    private static List<Position> SetSecondStartingPositions()
+    {
+        return new List<Position>()
+        {
+            new (6,6),
+            new (7,6),
+            new (7,7),
+            new (7,8),
+            new (8,7),
+            new (6,8),
         };
     }
     
