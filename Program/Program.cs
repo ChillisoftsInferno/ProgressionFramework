@@ -9,13 +9,13 @@ public static class Program
     public static void Main(string[] args)
     {
         //JSON and Tree Data Structure
-        //JsonReader jsonReader = new JsonReader();
-        //jsonReader.LoadJson();
-        //RunDialogue(jsonReader);
+        JsonReader jsonReader = new JsonReader();
+        jsonReader.LoadJson();
+        RunDialogue(jsonReader);
         //RunTreeDataStructure(jsonReader);
         
         //Creating Hash Codes
-        RunHashsetExample();
+        //RunHashsetExample();
         
         //Using extension methods on enums
         // Console.WriteLine(EnumHelper.RandomizeStatus().Value());

@@ -1,0 +1,180 @@
+[
+  {
+    "characterName": "Alistair",
+    "dialogueSets": [
+      {
+        "dialogueSetId": 1,
+        "relationshipLevel": 80,
+        "karmaLevel": 50,
+        "characterDialogues": [
+          {
+            "dialogueId": "Alistair_1",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "There you are! I always feel better when you're around.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "I'm glad you feel that way, Alistair.",
+                    "relationshipInfluence": 10,
+                    "characterKarmaInfluence": 5,
+                    "nextDialogue": {
+                      "characterDialogue": "I can't help it. It just feels right when we're together. Let's go save the world!"
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "Don't get too attached. You know how things can change.",
+                    "relationshipInfluence": -5,
+                    "characterKarmaInfluence": -10,
+                    "nextDialogue": {
+                      "characterDialogue": "I know. But it's hard not to hope for something more, you know?"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "dialogueId": "Alistair_1_repeat",
+            "conversationHistory": "repeat",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "Back again, are you? I have to say, it never gets old.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "Always. We make a good team.",
+                    "relationshipInfluence": 5,
+                    "characterKarmaInfluence": 3,
+                    "nextDialogue": {
+                      "characterDialogue": "That's the spirit! Together, nothing can stop us."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "We'll see how long this lasts.",
+                    "relationshipInfluence": -3,
+                    "characterKarmaInfluence": -5,
+                    "nextDialogue": {
+                      "characterDialogue": "Well, if nothing else, we’ve survived this long. That’s something, right?"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "dialogueSetId": 2,
+        "relationshipLevel": 50,
+        "karmaLevel": 30,
+        "characterDialogues": [
+          {
+            "dialogueId": "Alistair_2",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "You've changed. I can't quite put my finger on it, but something's different.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "Maybe I'm just seeing the world more clearly now.",
+                    "relationshipInfluence": -5,
+                    "characterKarmaInfluence": -5,
+                    "nextDialogue": {
+                      "characterDialogue": "I hope you're still the same person I trusted. But I suppose people change."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "Things have been tough, Alistair. Just trying to adapt.",
+                    "relationshipInfluence": 5,
+                    "characterKarmaInfluence": 0,
+                    "nextDialogue": {
+                      "characterDialogue": "I get it. We're all just trying to make it through, I suppose."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "dialogueSetId": 3,
+        "relationshipLevel": 80,
+        "karmaLevel": 10,
+        "characterDialogues": [
+          {
+            "dialogueId": "Alistair_3",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "I've always trusted you, but lately... I feel like I don't know you anymore.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "Maybe you never really did.",
+                    "relationshipInfluence": -10,
+                    "characterKarmaInfluence": -15,
+                    "nextDialogue": {
+                      "characterDialogue": "I hope you're wrong about that. I want to believe there's still good in you."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "I haven't been myself. I just need time.",
+                    "relationshipInfluence": 0,
+                    "characterKarmaInfluence": -5,
+                    "nextDialogue": {
+                      "characterDialogue": "Alright. I'll give you the time you need, but don't let this darkness consume you."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "dialogueSetId": 4,
+        "relationshipLevel": 30,
+        "karmaLevel": 10,
+        "characterDialogues": [
+          {
+            "dialogueId": "Alistair_4",
+            "conversationHistory": "first_time",
+            "text": "I won't pretend to understand why you've done what you have, but we're allies. That's all.",
+            "playerResponses": [
+              {
+                "responseId": 1,
+                "text": "Allies. Nothing more, nothing less.",
+                "relationshipInfluence": -5,
+                "characterKarmaInfluence": -5,
+                "nextDialogue": {
+                  "characterDialogue": "Fine. Let's just focus on our mission then."
+                }
+              },
+              {
+                "responseId": 2,
+                "text": "I'm not asking for your understanding. Just your help.",
+                "relationshipInfluence": 0,
+                "characterKarmaInfluence": -5,
+                "nextDialogue": {
+                  "characterDialogue": "You'll get that, as long as we're in this together."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

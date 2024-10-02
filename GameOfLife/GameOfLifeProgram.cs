@@ -40,7 +40,7 @@ public static class GameOfLifeProgram
         {
             generationCount++;
             int populationCount = GetPopulationCount();
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Clear();
             s_drawing.DrawMap();
             UpdateMap();
