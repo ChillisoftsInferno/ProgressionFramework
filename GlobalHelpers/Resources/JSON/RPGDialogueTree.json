@@ -176,5 +176,321 @@
         ]
       }
     ]
+  },
+  {
+    "characterName": "Morrigan",
+    "dialogueSets": [
+      {
+        "dialogueSetId": 1,
+        "relationshipLevel": 70,
+        "karmaLevel": 40,
+        "characterDialogues": [
+          {
+            "dialogueId": "Morrigan_1",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "Ah, here comes my favorite partner in mischief. What new chaos shall we sow today?",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "I'm always ready for some mischief, Morrigan.",
+                    "relationshipInfluence": 10,
+                    "characterKarmaInfluence": 5,
+                    "nextDialogue": {
+                      "characterDialogue": "That's what I like to hear. Let us embrace our freedom to do as we please."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "Not today. Maybe we could help someone instead?",
+                    "relationshipInfluence": -5,
+                    "characterKarmaInfluence": 10,
+                    "nextDialogue": {
+                      "characterDialogue": "Help someone? You surprise me... and not in a pleasant way."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "dialogueSetId": 2,
+        "relationshipLevel": 30,
+        "karmaLevel": 20,
+        "characterDialogues": [
+          {
+            "dialogueId": "Morrigan_2",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "You and I, we walk a fine line. Do not think I am unaware of your recent... decisions.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "I do what I must, Morrigan. No more, no less.",
+                    "relationshipInfluence": -5,
+                    "characterKarmaInfluence": -5,
+                    "nextDialogue": {
+                      "characterDialogue": "Then keep your 'musts' to yourself, and I shall do the same."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "Perhaps one day you'll understand my choices.",
+                    "relationshipInfluence": 0,
+                    "characterKarmaInfluence": 0,
+                    "nextDialogue": {
+                      "characterDialogue": "Perhaps. Or perhaps I will simply lose interest. Only time will tell."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "characterName": "Sten",
+    "dialogueSets": [
+      {
+        "dialogueSetId": 1,
+        "relationshipLevel": 60,
+        "karmaLevel": 45,
+        "characterDialogues": [
+          {
+            "dialogueId": "Sten_1",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "You have fought well, but your motives still puzzle me.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "I fight to protect those who can't protect themselves.",
+                    "relationshipInfluence": 5,
+                    "characterKarmaInfluence": 5,
+                    "nextDialogue": {
+                      "characterDialogue": "A noble answer, if one I have heard many times before. We shall see if your actions match your words."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "My motives are my own, Sten. Leave it at that.",
+                    "relationshipInfluence": -5,
+                    "characterKarmaInfluence": -5,
+                    "nextDialogue": {
+                      "characterDialogue": "Very well. We are allies, but do not think we are friends."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "dialogueSetId": 2,
+        "relationshipLevel": 20,
+        "karmaLevel": 15,
+        "characterDialogues": [
+          {
+            "dialogueId": "Sten_2",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "You stray from honor, and it makes me question your worth.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "Honor means little when lives are at stake.",
+                    "relationshipInfluence": -10,
+                    "characterKarmaInfluence": -10,
+                    "nextDialogue": {
+                      "characterDialogue": "You are wrong. Without honor, we are nothing."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "Perhaps you are right. I will reflect on my actions.",
+                    "relationshipInfluence": 5,
+                    "characterKarmaInfluence": 0,
+                    "nextDialogue": {
+                      "characterDialogue": "Good. A warrior must understand the weight of their choices."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "characterName": "Wynne",
+    "dialogueSets": [
+      {
+        "dialogueSetId": 1,
+        "relationshipLevel": 75,
+        "karmaLevel": 60,
+        "characterDialogues": [
+          {
+            "dialogueId": "Wynne_1",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "It warms my heart to see someone still fighting for what is right.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "The world needs people like us, Wynne.",
+                    "relationshipInfluence": 10,
+                    "characterKarmaInfluence": 5,
+                    "nextDialogue": {
+                      "characterDialogue": "Indeed it does. We are the light in the darkness."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "I'm just doing what needs to be done.",
+                    "relationshipInfluence": 5,
+                    "characterKarmaInfluence": 0,
+                    "nextDialogue": {
+                      "characterDialogue": "And that is often more than most are willing to do. You have my respect."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "dialogueSetId": 2,
+        "relationshipLevel": 30,
+        "karmaLevel": 20,
+        "characterDialogues": [
+          {
+            "dialogueId": "Wynne_2",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "Your recent actions have troubled me greatly. Are you sure you are on the right path?",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "What is right isn't always clear, Wynne.",
+                    "relationshipInfluence": -5,
+                    "characterKarmaInfluence": -5,
+                    "nextDialogue": {
+                      "characterDialogue": "Perhaps not. But we must strive to find it, nonetheless."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "I know I've made mistakes, but I am trying.",
+                    "relationshipInfluence": 5,
+                    "characterKarmaInfluence": 0,
+                    "nextDialogue": {
+                      "characterDialogue": "That is all any of us can do. I hope you find your way."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "characterName": "Dog",
+    "dialogueSets": [
+      {
+        "dialogueSetId": 1,
+        "relationshipLevel": 80,
+        "characterKarmaLevel": 50,
+        "characterDialogues": [
+          {
+            "dialogueId": "Dog_1",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "The dog barks happily and wags his tail, looking at you expectantly.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "Who's a good boy? You are!",
+                    "relationshipInfluence": 5,
+                    "characterKarmaInfluence": 0,
+                    "nextDialogue": {
+                      "characterDialogue": "The dog jumps up, tail wagging furiously, clearly enjoying the attention."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "Come on, boy. We've got work to do.",
+                    "relationshipInfluence": 0,
+                    "characterKarmaInfluence": 0,
+                    "nextDialogue": {
+                      "characterDialogue": "The dog follows closely, still happy but ready for action."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "dialogueSetId": 2,
+        "relationshipLevel": 40,
+        "characterKarmaLevel": 20,
+        "characterDialogues": [
+          {
+            "dialogueId": "Dog_2",
+            "conversationHistory": "first_time",
+            "textSets": [
+              {
+                "textId": 1,
+                "text": "The dog growls softly, his ears drooping slightly as he watches you.",
+                "playerResponses": [
+                  {
+                    "responseId": 1,
+                    "text": "What's wrong, boy? Don't you trust me?",
+                    "relationshipInfluence": 0,
+                    "characterKarmaInfluence": 5,
+                    "nextDialogue": {
+                      "characterDialogue": "The dog tilts his head, then nudges your hand, still wary but seeking reassurance."
+                    }
+                  },
+                  {
+                    "responseId": 2,
+                    "text": "Stop growling and get in line.",
+                    "relationshipInfluence": -5,
+                    "characterKarmaInfluence": -5,
+                    "nextDialogue": {
+                      "characterDialogue": "The dog reluctantly obeys, tail hanging low."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]

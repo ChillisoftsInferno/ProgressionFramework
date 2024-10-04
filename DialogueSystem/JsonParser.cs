@@ -1,9 +1,12 @@
 using GlobalHelpers;
 using Newtonsoft.Json;
+using System.IO;
+using System.Text.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace DialogueSystem;
 
-public class JsonReader
+public class JsonParser
 {
     public List<Character> CharacterDialogues = new List<Character>();
 
@@ -45,6 +48,19 @@ public class JsonReader
             if (playerSave.IsNull()) return null;
             return playerSave;
         }
+    }
+
+    public void SavePlayerData(PlayerSave save)
+    {
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
+        string jsonSave = JsonSerializer.Serialize(save, options);
+        string filePath = "person.json";
+        File.WriteAllText(filePath, jsonSave);
+
+        Console.WriteLine($"JSON data saved to {filePath}");
     }
     
     private void SetCharacterList(List<Character> set)

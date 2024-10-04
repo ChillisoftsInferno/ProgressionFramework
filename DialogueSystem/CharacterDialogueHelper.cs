@@ -10,10 +10,8 @@ public static class CharacterDialogueHelper
     {
         s_playerRelationships = playerRelationships ?? throw new ArgumentNullException(nameof(playerRelationships));
     }
-
     
-    
-    private static string NextLine(this string text)
+    public static string NextLine(this string text)
     {
         text += "\n";
         return text;
@@ -23,20 +21,26 @@ public static class CharacterDialogueHelper
     {
         var characterRelationship = s_playerRelationships!.FirstOrDefault(r => r.CharacterName == character.CharacterName);
         if (characterRelationship.IsNull()) return;
-        
         Console.WriteLine($"Character Name: {character.CharacterName}".NextLine());
-        
         var availableSet = character.DialogueSets
             .FirstOrDefault(s => s.RelationshipLevel >= characterRelationship!.RelationshipLevel);
-        
         if (availableSet.IsNull()) return;
-        
         availableSet!.ExecuteDialogueSet();
     }
 
-    public static void ExecuteDialogueSet(this DialogueSet dialogueSet)
+    private static void ExecuteDialogueSet(this DialogueSet dialogueSet)
     {
         Console.WriteLine($"Dialogue Set Id: {dialogueSet.DialogueSetId}".NextLine());
-        Console.WriteLine($"");
+        Console.WriteLine($"Relationship Level: {dialogueSet.RelationshipLevel}".NextLine());
+        Console.WriteLine($"Karma Level: {dialogueSet.KarmaLevel}".NextLine());
+        var set = dialogueSet.CharacterDialogues.FirstOrDefault(cd => cd.ConversationHistory == "first_time");
+        if (set.IsNull()) return;
+        set!.ExecuteCharacterDialogue();
+    }
+
+    private static void ExecuteCharacterDialogue(this CharacterDialogue characterDialogue)
+    {
+        Console.WriteLine($"Character Dialogue Id: {characterDialogue.DialogueId}".NextLine());
+        Console.WriteLine($"Conversation History: {characterDialogue.ConversationHistory}".NextLine());
     }
 }

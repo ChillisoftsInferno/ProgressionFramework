@@ -14,4 +14,6 @@ public class DialogueManager(List<Character> characters)
         
         selectedCharacter.ExecuteCharacterDialogue();        
     }
+
+    public List<Character> GetCharacters() => characters;
 }
