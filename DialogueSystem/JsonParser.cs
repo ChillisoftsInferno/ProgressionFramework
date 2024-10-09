@@ -10,9 +10,12 @@ public class JsonParser
 {
     public List<Character> CharacterDialogues = new List<Character>();
 
+    private string _playerSaveFilePath = "../../../../GlobalHelpers/Resources/JSON/PlayerSaveData.json";
+    private string _dialogueTreeFilePath = "../../../../GlobalHelpers/Resources/JSON/RPGDialogueTree.json";
+
     public void LoadJson()
     {
-        using (StreamReader r = new StreamReader("../../../../GlobalHelpers/Resources/JSON/RPGDialogueTree.json"))
+        using (StreamReader r = new StreamReader(_dialogueTreeFilePath))
         {
             string json = r.ReadToEnd();
             
@@ -24,9 +27,9 @@ public class JsonParser
         }
     }
     
-    public List<PlayerSave>? LoadPlayerSaves()
+    public List<PlayerSave>? LoadAllPlayerSaves()
     {
-        using (StreamReader r = new StreamReader("../../../../GlobalHelpers/Resources/JSON/PlayerSaves.json"))
+        using (StreamReader r = new StreamReader(_playerSaveFilePath))
         {
             string json = r.ReadToEnd();
 
@@ -36,9 +39,9 @@ public class JsonParser
         }
     }
 
-    public PlayerSave? LoadSavedPlayerData(int saveId)
+    public PlayerSave? LoadPlayerSaveById(int saveId)
     {
-        using (StreamReader r = new StreamReader("../../../../GlobalHelpers/Resources/JSON/PlayerSaveData.json"))
+        using (StreamReader r = new StreamReader(_playerSaveFilePath))
         {
             string json = r.ReadToEnd();
 
@@ -52,15 +55,25 @@ public class JsonParser
 
     public void SavePlayerData(PlayerSave save)
     {
+        var allSaves = LoadAllPlayerSaves() ?? null;
+        int saveCount = allSaves?.LastOrDefault()?.SaveId + 1 ?? 1;
+        
+        var newSave = new PlayerSave
+        {
+            SaveId = saveCount,
+            SavedData = save.SavedData
+        };
+        allSaves?.Add(newSave);
+        if (allSaves == null) return;
         var options = new JsonSerializerOptions
         {
-            WriteIndented = true
+            WriteIndented = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
-        string jsonSave = JsonSerializer.Serialize(save, options);
-        string filePath = "person.json";
-        File.WriteAllText(filePath, jsonSave);
-
-        Console.WriteLine($"JSON data saved to {filePath}");
+        string jsonSave = JsonSerializer.Serialize(allSaves, options);
+        File.WriteAllText(_playerSaveFilePath, jsonSave);
+        
+        Console.WriteLine($"Game Saved");
     }
     
     private void SetCharacterList(List<Character> set)
