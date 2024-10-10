@@ -51,6 +51,7 @@
     <ItemGroup>
       <Content Include="Resources\JSON\Dialogue.json" />
       <Content Include="Resources\JSON\PlayerSaveData.json" />
+      <Content Include="Resources\JSON\PlayerSaveData_Backup.json" />
       <Content Include="Resources\JSON\RPGDialogueTree.json" />
       <Content Include="Resources\JSON\TreeNodeValues.json" />
     </ItemGroup>

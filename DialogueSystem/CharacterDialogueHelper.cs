@@ -71,7 +71,7 @@ public static class CharacterDialogueHelper
         s_currentPlayerResponses[index - 1].ExecutePlayerResponse();
     }
 
-    public static void ExecutePlayerResponse(this PlayerResponse response)
+    private static void ExecutePlayerResponse(this PlayerResponse response)
     {
         $"{response.Text}".WriteOverTime(0.5,0.5);
         
@@ -83,11 +83,11 @@ public static class CharacterDialogueHelper
     
     public static void WriteOverTime(this string text, double secondsToGenerate = 1, double secondsToWaitForNext = 1)
     {
-        var waitForNextTimer = Convert.ToInt32(secondsToWaitForNext * 1000);
-        var timePerChar = Convert.ToInt32(((secondsToGenerate * text.Length) * 1000 / text.Length) / 20);
+        int waitForNextTimer = Convert.ToInt32(secondsToWaitForNext * 1000) / 2;
+        int timePerChar = Convert.ToInt32(((secondsToGenerate * text.Length) * 1000 / text.Length) / 20);
         
-        var counter = text.Length;
-        var currentIndex = 0;
+        int counter = text.Length;
+        int currentIndex = 0;
         while (currentIndex < counter)
         {
             Console.Write(text[currentIndex]);
@@ -96,6 +96,20 @@ public static class CharacterDialogueHelper
         }
         Console.WriteLine();
         Thread.Sleep(waitForNextTimer);
+    }
+
+    public static void RunLoadingIndicator(double secondsToWaitForNext)
+    {
+        int timesLoaded = 0;
+        int waitForNextTimer = Convert.ToInt32(secondsToWaitForNext * 1000 / 3);
+        while (timesLoaded < 3)
+        {
+            Console.Clear();
+            Console.WriteLine("Loading");
+            "...".WriteOverTime(waitForNextTimer);
+            Thread.Sleep(waitForNextTimer);
+            timesLoaded++;
+        }
     }
 
     private static DialogueSet GetViableDialogueSet(this List<DialogueSet> sets, Relationship playerRelationship)

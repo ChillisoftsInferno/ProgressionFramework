@@ -2,11 +2,12 @@ using GlobalHelpers;
 using Newtonsoft.Json;
 using System.IO;
 using System.Text.Json;
+using DialogueSystem.Interfaces;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace DialogueSystem;
 
-public class JsonParser
+public class JsonParser : IJsonParser
 {
     public List<Character> CharacterDialogues = new List<Character>();
 
@@ -53,18 +54,22 @@ public class JsonParser
         }
     }
 
-    public void SavePlayerData(PlayerSave save)
+    public void SavePlayerData(PlayerSave save, bool nextSave)
     {
         var allSaves = LoadAllPlayerSaves() ?? null;
-        int saveCount = allSaves?.LastOrDefault()?.SaveId + 1 ?? 1;
-        
-        var newSave = new PlayerSave
-        {
-            SaveId = saveCount,
-            SavedData = save.SavedData
-        };
-        allSaves?.Add(newSave);
         if (allSaves == null) return;
+
+        if (nextSave)
+        {
+            int saveCount = allSaves?.LastOrDefault()?.SaveId + 1 ?? 1;
+            var newSave = new PlayerSave
+            {
+                SaveId = saveCount,
+                SavedData = save.SavedData
+            };
+            allSaves?.Add(newSave);
+        }
+        
         var options = new JsonSerializerOptions
         {
             WriteIndented = true,

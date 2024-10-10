@@ -1,52 +1,39 @@
-﻿namespace DialogueSystem;
+﻿using DialogueSystem.Interfaces;
+using DialogueSystem.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+namespace DialogueSystem;
 
 public static class Program
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
-        JsonParser jsonParser = new JsonParser();
-        jsonParser.LoadJson();
-        DialogueMenu dialogueMenu = new DialogueMenu(jsonParser.CharacterDialogues);
-        PlayerController playerController = new PlayerController();
-        "Select a save by entering a number. Enter 0 for a new save.".NextLine().WriteOverTime();
-        var saveNum = "";
-        while (string.IsNullOrEmpty(saveNum))
-        {
-            saveNum = Console.ReadLine();
-        }
+        IHost host = Host
+            .CreateDefaultBuilder()
+            .ConfigureServices(services => InjectDependencies())
+            .Build();
 
-        var savedNum = int.Parse(saveNum) - 1;
-        if (savedNum >= jsonParser.LoadAllPlayerSaves()!.Count)
-            throw new ArgumentOutOfRangeException(nameof(saveNum));
-        if (savedNum < 0) savedNum = jsonParser.LoadAllPlayerSaves()!.Count - 1;
+        var game = host.Services.GetRequiredService<StartGame>();
+
+        game.Launch();
+
+
         
-        playerController.CurrentSave = jsonParser.LoadPlayerSaveById(savedNum) ?? throw new ArgumentNullException(nameof(playerController.CurrentSave));
-        CharacterDialogueHelper.SetPlayerRelationships(playerController.CurrentSave.SavedData.First().Relationships);
-
-        "Enter a character name to talk to them.".NextLine().WriteOverTime();
-        "Available characters:".NextLine().WriteOverTime(secondsToWaitForNext:0.25);
-
-        var characters = dialogueMenu.GetCharacters();
-        foreach (var character in characters)
-        {
-            character.CharacterName.WriteOverTime(0.25,0.25);
-        }
-        Console.WriteLine();
-        var characterName = "";
-        while (string.IsNullOrEmpty(characterName))
-        {
-            characterName = Console.ReadLine();
-        }
-        dialogueMenu.RunCharacterDialogue(characterName);
-
-        var responseNum = "";
-        while (string.IsNullOrEmpty(responseNum))
-        {
-            responseNum = Console.ReadLine();
-        }
-        CharacterDialogueHelper.CheckForValidPlayerResponse(int.Parse(responseNum));
-        playerController.CurrentSave.SavedData.First().Relationships = CharacterDialogueHelper.GetPlayerRelationships();
         
-        jsonParser.SavePlayerData(playerController.CurrentSave);
     }
+
+    private static IServiceCollection InjectDependencies()
+    {
+        IServiceCollection services = new ServiceCollection();
+        
+        services.AddSingleton<IApplication, Application>();
+        services.AddSingleton<IJsonParser, JsonParser>();
+        services.AddSingleton<IPlayerController, PlayerController>();
+        services.AddSingleton<IDialogueManager, DialogueManager>();
+        services.AddSingleton<IDialogueMenu, DialogueMenu>();
+        services.AddSingleton<IStartGame, StartGame>();
+        return services;
+    }
+
 }

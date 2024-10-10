@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace DialogueSystem;
 
-public class DialogueMenu(List<Character> characters)
+public class DialogueMenu(List<Character> characters) : IDialogueMenu
 {
     private readonly List<Character> _characterDialogues = characters;
 
