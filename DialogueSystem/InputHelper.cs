@@ -30,7 +30,7 @@ public static class InputHelper
 
     public static bool GetConsoleKeyOutput()
     {
-        
+        return false;
     }
 
     public static bool GetPredicateOutput()

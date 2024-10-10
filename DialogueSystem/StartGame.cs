@@ -5,20 +5,19 @@ using DialogueSystem.Interfaces;
 
 namespace DialogueSystem;
 
-public class StartGame : IStartGame
+public class StartGame
+(
+    JsonParser jsonParser,
+    PlayerController playerController,
+    DialogueManager dialogueManager,
+    DialogueMenu dialogueMenu
+)
+    : IStartGame
 {
-    private readonly JsonParser _jsonParser;
-    private readonly PlayerController _playerController;
-    private readonly DialogueManager _dialogueManager;
-    private readonly DialogueMenu _dialogueMenu;
-
-    public StartGame(JsonParser jsonParser, PlayerController playerController, DialogueManager dialogueManager, DialogueMenu dialogueMenu)
-    {
-        _jsonParser = jsonParser ?? throw new ArgumentNullException(nameof(jsonParser));
-        _playerController = playerController ?? throw new ArgumentNullException(nameof(playerController));
-        _dialogueManager = dialogueManager ?? throw new ArgumentNullException(nameof(dialogueManager));
-        _dialogueMenu = dialogueMenu ?? throw new ArgumentNullException(nameof(dialogueMenu));
-    }
+    private readonly JsonParser _jsonParser = jsonParser ?? throw new ArgumentNullException(nameof(jsonParser));
+    private readonly PlayerController _playerController = playerController ?? throw new ArgumentNullException(nameof(playerController));
+    private readonly DialogueManager _dialogueManager = dialogueManager ?? throw new ArgumentNullException(nameof(dialogueManager));
+    private readonly DialogueMenu _dialogueMenu = dialogueMenu ?? throw new ArgumentNullException(nameof(dialogueMenu));
 
     public void Launch()
     {
