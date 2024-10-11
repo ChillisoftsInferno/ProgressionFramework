@@ -5,5 +5,5 @@ namespace DialogueSystem.Interfaces;
 
 public interface IDialogueManager
 {
-    
+    public void RunDialogueSequence();
 }

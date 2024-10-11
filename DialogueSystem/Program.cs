@@ -11,29 +11,23 @@ public static class Program
     {
         IHost host = Host
             .CreateDefaultBuilder()
-            .ConfigureServices(services => InjectDependencies())
+            .ConfigureServices(InjectDependencies())
             .Build();
 
-        var game = host.Services.GetRequiredService<StartGame>();
+        var game = host.Services.GetRequiredService<IStartGame>();
 
         game.Launch();
-
-
-        
-        
     }
 
-    private static IServiceCollection InjectDependencies()
+    private static Action<IServiceCollection> InjectDependencies()
     {
-        IServiceCollection services = new ServiceCollection();
-        
-        services.AddSingleton<IApplication, Application>();
-        services.AddSingleton<IJsonParser, JsonParser>();
-        services.AddSingleton<IPlayerController, PlayerController>();
-        services.AddSingleton<IDialogueManager, DialogueManager>();
-        services.AddSingleton<IDialogueMenu, DialogueMenu>();
-        services.AddSingleton<IStartGame, StartGame>();
-        return services;
+        return services =>
+        {
+            services.AddSingleton<IJsonParser, JsonParser>();
+            services.AddSingleton<IPlayerController, PlayerController>();
+            services.AddSingleton<IDialogueManager, DialogueManager>();
+            services.AddSingleton<IDialogueMenu, DialogueMenu>();
+            services.AddSingleton<IStartGame, StartGame>();
+        };
     }
-
 }

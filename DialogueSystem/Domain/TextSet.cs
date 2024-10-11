@@ -1,4 +1,4 @@
-namespace DialogueSystem;
+namespace DialogueSystem.Domain;
 
 public class TextSet
 {

@@ -1,6 +1,7 @@
+using DialogueSystem.Domain;
 using GlobalHelpers;
 
-namespace DialogueSystem;
+namespace DialogueSystem.Helpers;
 
 public static class CharacterDialogueHelper
 {
@@ -84,7 +85,7 @@ public static class CharacterDialogueHelper
     public static void WriteOverTime(this string text, double secondsToGenerate = 1, double secondsToWaitForNext = 1)
     {
         int waitForNextTimer = Convert.ToInt32(secondsToWaitForNext * 1000) / 2;
-        int timePerChar = Convert.ToInt32(((secondsToGenerate * text.Length) * 1000 / text.Length) / 20);
+        int timePerChar = Convert.ToInt32(secondsToGenerate * 1000 / text.Length);
         
         int counter = text.Length;
         int currentIndex = 0;
@@ -94,7 +95,6 @@ public static class CharacterDialogueHelper
             Thread.Sleep(timePerChar);
             currentIndex++;
         }
-        Console.WriteLine();
         Thread.Sleep(waitForNextTimer);
     }
 
@@ -104,12 +104,20 @@ public static class CharacterDialogueHelper
         int waitForNextTimer = Convert.ToInt32(secondsToWaitForNext * 1000 / 3);
         while (timesLoaded < 3)
         {
-            Console.Clear();
-            Console.WriteLine("Loading");
-            "...".WriteOverTime(waitForNextTimer);
-            Thread.Sleep(waitForNextTimer);
+            ClearCurrentConsoleLine();
+            Console.Write("Loading");
+            "...".WriteOverTime(1,0);
             timesLoaded++;
         }
+        Console.Clear();
+    }
+    
+    public static void ClearCurrentConsoleLine()
+    {
+        int currentLineCursor = Console.CursorTop;
+        Console.SetCursorPosition(0, currentLineCursor);
+        Console.Write(new string(' ', Console.WindowWidth));  // Overwrite the current line with spaces
+        Console.SetCursorPosition(0, currentLineCursor);     // Move the cursor back to the start of the line
     }
 
     private static DialogueSet GetViableDialogueSet(this List<DialogueSet> sets, Relationship playerRelationship)

@@ -1,11 +1,11 @@
+using System.Text.Json;
+using DialogueSystem.Domain;
+using DialogueSystem.Interfaces;
 using GlobalHelpers;
 using Newtonsoft.Json;
-using System.IO;
-using System.Text.Json;
-using DialogueSystem.Interfaces;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace DialogueSystem;
+namespace DialogueSystem.Services;
 
 public class JsonParser : IJsonParser
 {

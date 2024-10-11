@@ -1,17 +1,21 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this
 
-using System.Globalization;
+using DialogueSystem.Domain;
+using DialogueSystem.Helpers;
+using DialogueSystem.Interfaces;
 
-namespace DialogueSystem;
+namespace DialogueSystem.Services;
 
-public class DialogueMenu(List<Character> characters) : IDialogueMenu
+public class DialogueMenu : IDialogueMenu
 {
-    private readonly List<Character> _characterDialogues = characters;
+    private List<Character> _characterDialogues;
+
+    public void SetCharacterDialogues(List<Character> characterDialogues) => _characterDialogues = characterDialogues;
 
     public void RunCharacterDialogue(string characterName)
     {
-        var selectedCharacter = characters.FirstOrDefault(c => c.CharacterName == characterName);
+        var selectedCharacter = _characterDialogues.FirstOrDefault(c => c.CharacterName == characterName);
         if (selectedCharacter == null) return;
         
         selectedCharacter.ExecuteCharacterDialogue();        
@@ -48,5 +52,5 @@ public class DialogueMenu(List<Character> characters) : IDialogueMenu
         }
     }
 
-    public List<Character> GetCharacters() => characters;
+    public List<Character> GetCharacterDialogues() => _characterDialogues;
 }
