@@ -8,7 +8,8 @@ namespace DialogueSystem.Interfaces;
 public interface IJsonParser
 {
     public void LoadJson();
-    public List<PlayerSave>? LoadAllPlayerSaves();
-    public PlayerSave? LoadPlayerSaveById(int saveId);
+    public List<PlayerSave> LoadAllPlayerSaves();
+    public PlayerSave LoadPlayerSaveById(int saveId);
+    public PlayerSave GetLatestPlayerSave();
     public void SavePlayerData(PlayerSave save, bool nextSave);
 }

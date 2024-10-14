@@ -13,8 +13,10 @@ public class DialogueMenu : IDialogueMenu
 
     public void SetCharacterDialogues(List<Character> characterDialogues) => _characterDialogues = characterDialogues;
 
-    public void RunCharacterDialogue(string characterName)
+    public void RunCharacterDialogue()
     {
+        Console.Write("\nCharacter Name: ");
+        string characterName = InputHelper.GetTextOutput();
         var selectedCharacter = _characterDialogues.FirstOrDefault(c => c.CharacterName == characterName);
         if (selectedCharacter == null) return;
         

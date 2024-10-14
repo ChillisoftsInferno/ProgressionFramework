@@ -1,6 +1,7 @@
 [
   {
-    "saveId": 1,
+    "saveId": 2,
+    "saveName": "Northgard",
     "savedData": [
       {
         "relationships": [
@@ -26,6 +27,69 @@
           }
         ]
       }
-    ]
+    ],
+    "archived": false
+  },
+  {
+    "saveId": 1,
+    "saveName": "Alistair\u0027s Demise",
+    "savedData": [
+      {
+        "relationships": [
+          {
+            "characterName": "Alistair",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Morrigan",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Sten",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Wynne",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Dog",
+            "relationshipLevel": 50
+          }
+        ]
+      }
+    ],
+    "archived": false
+  },
+  {
+    "saveId": 0,
+    "saveName": "DEFAULT",
+    "savedData": [
+      {
+        "relationships": [
+          {
+            "characterName": "Alistair",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Morrigan",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Sten",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Wynne",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Dog",
+            "relationshipLevel": 50
+          }
+        ]
+      }
+    ],
+    "archived": true
   }
 ]

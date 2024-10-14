@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this
 
+using DialogueSystem.Domain;
 using DialogueSystem.Helpers;
 using DialogueSystem.Interfaces;
 
@@ -19,47 +20,81 @@ public class DialogueManager : IDialogueManager
         _playerController = playerController ?? throw new ArgumentNullException(nameof(playerController));
     }
 
-    public void RunDialogueSequence()
+    public void RunLoadSaveSequence()
     {
-        LoadSaveMenu();
-        ExecuteSaveMenu();
+        if (HasForExistingSaves())
+        {
+            LoadSaveMenu();
+            ExecuteSaveMenu();
+        }
+        else
+        {
+            ExecuteNewGame();
+        }
+        
+        LoadCharacterDialogueInteractionMenu();
+    }
+
+    private bool HasForExistingSaves()
+    {
+        return _jsonParser.LoadAllPlayerSaves().Count > 1;
     }
     
     private void LoadSaveMenu()
     {
-        CharacterDialogueHelper.RunLoadingIndicator(2);
+        OutputHelper.RunLoadingIndicator();
 
         "Select a save by entering a number. Enter 0 for a new save.".NextLine().WriteOverTime();
-        Console.WriteLine("Load Save:");
-        foreach (var save in _jsonParser.LoadAllPlayerSaves()!)
+        Console.WriteLine("Saved Games:");
+        foreach (var save in _jsonParser.LoadAllPlayerSaves()!.Where(s => s.SaveId > 0))
         {
-            Console.WriteLine(save.SaveId);
+            Console.WriteLine($"{save.SaveId}: {save.SaveName}");
         }
-        Console.Write("Save to load: ");
+        Console.Write("Load save number: ");
+    }
+
+    private void ExecuteNewGame()
+    {
+        Console.WriteLine("Starting New Game...");
+        int savedNum = 0;
+        var defaultSave = _jsonParser.LoadPlayerSaveById(savedNum) ?? throw new ArgumentNullException(nameof(savedNum),"Default save not found!");
+        var newSave = defaultSave.Clone();
+        _jsonParser.SavePlayerData(newSave, true);
+        var latestSave = _jsonParser.GetLatestPlayerSave();
+        _playerController.SetCurrentSave(latestSave);
+        CharacterDialogueHelper.SetPlayerRelationships(latestSave.SavedData.First().Relationships);
     }
 
     private void ExecuteSaveMenu()
     {
-        var savedNum = InputHelper.GetNumericOutput();
-        
-        if (savedNum > _jsonParser.LoadAllPlayerSaves()!.Count)
+        int savedNum = InputHelper.GetNumericOutput();
+        int amountOfSaves = _jsonParser.LoadAllPlayerSaves()?.Count ?? throw new ArgumentOutOfRangeException(nameof(amountOfSaves));
+         
+        if (savedNum > amountOfSaves)
             throw new ArgumentOutOfRangeException(nameof(savedNum));
-        
-        if (savedNum == 0) savedNum = _jsonParser.LoadAllPlayerSaves()!.Count;
 
-        _playerController.SetCurrentSave(_jsonParser.LoadPlayerSaveById(savedNum) ?? throw new ArgumentNullException(nameof(savedNum)));
+        if (savedNum == 0)
+        {
+            ExecuteNewGame();
+        }
+        else
+        {
+            _playerController.SetCurrentSave(_jsonParser.LoadPlayerSaveById(savedNum) ?? throw new ArgumentNullException(nameof(savedNum)));
+        }
+
         CharacterDialogueHelper.SetPlayerRelationships(_playerController.GetCurrentSave().SavedData.First().Relationships);
     }
 
     private void LoadCharacterDialogueInteractionMenu()
     {
+        OutputHelper.RunLoadingIndicator();
         "Enter a character name to talk to them.".NextLine().WriteOverTime();
-        "Available characters:".NextLine().WriteOverTime(secondsToWaitForNext:0.25);
+        "\nAvailable characters:".NextLine().WriteOverTime(secondsToWaitForNext:0.25);
 
         var characters = _dialogueMenu.GetCharacterDialogues();
         foreach (var character in characters)
         {
-            character.CharacterName.WriteOverTime(0.25,0.25);
+            character.CharacterName.NextLine().WriteOverTime(0.25,0.25);
         }
     }
 }

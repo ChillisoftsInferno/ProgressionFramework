@@ -52,7 +52,7 @@
                 {
                   "responseId": 2,
                   "text": "We'll see how long this lasts.",
-                  "relationshipInfluence": -3,
+                  "relationshipInfluence": -5,
                   "characterKarmaInfluence": -5,
                   "nextDialogue": {
                     "characterDialogue": "Well, if nothing else, we’ve survived this long. That’s something, right?"
@@ -120,7 +120,7 @@
                 {
                   "responseId": 2,
                   "text": "I haven't been myself. I just need time.",
-                  "relationshipInfluence": 0,
+                  "relationshipInfluence": 5,
                   "characterKarmaInfluence": -5,
                   "nextDialogue": {
                     "characterDialogue": "Alright. I'll give you the time you need, but don't let this darkness consume you."
@@ -154,7 +154,7 @@
                 {
                   "responseId": 2,
                   "text": "I'm not asking for your understanding. Just your help.",
-                  "relationshipInfluence": 0,
+                  "relationshipInfluence": 5,
                   "characterKarmaInfluence": -5,
                   "nextDialogue": {
                     "characterDialogue": "You'll get that, as long as we're in this together."
@@ -227,8 +227,8 @@
                 {
                   "responseId": 2,
                   "text": "Perhaps one day you'll understand my choices.",
-                  "relationshipInfluence": 0,
-                  "characterKarmaInfluence": 0,
+                  "relationshipInfluence": 5,
+                  "characterKarmaInfluence": 2,
                   "nextDialogue": {
                     "characterDialogue": "Perhaps. Or perhaps I will simply lose interest. Only time will tell."
                   }
@@ -301,7 +301,7 @@
                   "responseId": 2,
                   "text": "Perhaps you are right. I will reflect on my actions.",
                   "relationshipInfluence": 5,
-                  "characterKarmaInfluence": 0,
+                  "characterKarmaInfluence": 5,
                   "nextDialogue": {
                     "characterDialogue": "Good. A warrior must understand the weight of their choices."
                   }
@@ -412,10 +412,19 @@
                 {
                   "responseId": 2,
                   "text": "Come on, boy. We've got work to do.",
-                  "relationshipInfluence": 0,
+                  "relationshipInfluence": 10,
                   "characterKarmaInfluence": 0,
                   "nextDialogue": {
                     "characterDialogue": "The dog follows closely, still happy but ready for action."
+                  }
+                },
+                {
+                  "responseId": 3,
+                  "text": "Not now, go play with someone else!",
+                  "relationshipInfluence": -10,
+                  "characterKarmaInfluence": 0,
+                  "nextDialogue": {
+                    "characterDialogue": "The dog's tail slowly falls between it's legs as he walks away and you see the excitement leave it's face."
                   }
                 }
               ]
@@ -437,7 +446,7 @@
                 {
                   "responseId": 1,
                   "text": "What's wrong, boy? Don't you trust me?",
-                  "relationshipInfluence": 0,
+                  "relationshipInfluence": 15,
                   "characterKarmaInfluence": 5,
                   "nextDialogue": {
                     "characterDialogue": "The dog tilts his head, then nudges your hand, still wary but seeking reassurance."
@@ -446,8 +455,8 @@
                 {
                   "responseId": 2,
                   "text": "Stop growling and get in line.",
-                  "relationshipInfluence": -5,
-                  "characterKarmaInfluence": -5,
+                  "relationshipInfluence": -20,
+                  "characterKarmaInfluence": -10,
                   "nextDialogue": {
                     "characterDialogue": "The dog reluctantly obeys, tail hanging low."
                   }

@@ -8,7 +8,7 @@ namespace DialogueSystem.Interfaces;
 public interface IDialogueMenu
 {
     public void SetCharacterDialogues(List<Character> characterDialogues);
-    public void RunCharacterDialogue(string characterName);
+    public void RunCharacterDialogue();
     public void RunPlayerResponse();
     public List<Character> GetCharacterDialogues();
 }

@@ -3,7 +3,7 @@
 
 namespace DialogueSystem.Interfaces;
 
-public interface IDialogueManager
+public interface IMenuManager
 {
-    public void RunLoadSaveSequence();
+    public void DisplayMainMenu();
 }

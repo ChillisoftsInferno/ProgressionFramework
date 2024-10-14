@@ -27,22 +27,27 @@ public class StartGame
     {
         _logger.Log(LogLevel.Information, "StartGame Initialized");
         LoadContent();
-        _dialogueManager.RunDialogueSequence();
-        _dialogueMenu.RunCharacterDialogue(InputHelper.GetTextOutput());
-        CharacterDialogueHelper.CheckForValidPlayerResponse(InputHelper.GetNumericOutput());
-        _playerController.GetCurrentSave().SavedData.First().Relationships = CharacterDialogueHelper.GetPlayerRelationships();
-        
-        "Would you like to overwrite the current save? [Y/N]".NextLine().WriteOverTime();
-        var saveAnswer = Console.ReadKey(true).Key;
-
-        bool nextSave = false;
-        while (saveAnswer is not ConsoleKey.Y and ConsoleKey.N)
+        _dialogueManager.RunLoadSaveSequence();
+        while (true)
         {
-            saveAnswer = Console.ReadKey(true).Key;
-            nextSave = saveAnswer == ConsoleKey.Y;
-        }
+            _dialogueMenu.RunCharacterDialogue();
+            CharacterDialogueHelper.CheckForValidPlayerResponse();
+            _playerController.GetCurrentSave().SavedData.First().Relationships = CharacterDialogueHelper.GetPlayerRelationships();
+        
+            "Would you like to overwrite the current save? [Y/N]".NextLine().WriteOverTime();
+
+            bool nextSave = false;
+            bool validAnswer = false;
+        
+            while (!validAnswer)
+            {
+                var saveAnswer = Console.ReadKey(true).Key;
+                if (saveAnswer is ConsoleKey.Y or ConsoleKey.N) validAnswer = true;
+                nextSave = saveAnswer == ConsoleKey.N;
+            }
             
-        _jsonParser.SavePlayerData(_playerController.GetCurrentSave(), nextSave);
+            _jsonParser.SavePlayerData(_playerController.GetCurrentSave(), nextSave);
+        }
     }
 
 

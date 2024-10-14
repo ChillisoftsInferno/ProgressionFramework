@@ -26,9 +26,10 @@ public static class CharacterDialogueHelper
     public static void ExecuteCharacterDialogue(this Character character)
     {
         var characterRelationship = s_playerRelationships!.FirstOrDefault(r => r.CharacterName == character.CharacterName);
-        if (characterRelationship.IsNull()) return;
+        if (characterRelationship.IsNull()) throw new ArgumentNullException(nameof(characterRelationship));
+        Console.Clear();
+        Console.Write($"Character Name: {s_selectedCharacterName}");
         s_selectedCharacterName = character.CharacterName;
-        Console.WriteLine($"Character Name: {character.CharacterName}".NextLine());
         var availableSet = character.DialogueSets.GetViableDialogueSet(characterRelationship!);
         if (availableSet.IsNull()) return;
         availableSet!.ExecuteDialogueSet();
@@ -52,7 +53,7 @@ public static class CharacterDialogueHelper
         s_selectedTextSet = characterDialogue.TextSet 
                             ?? throw new ArgumentNullException(nameof(characterDialogue.TextSet));
         
-        $"\"{s_selectedTextSet.Text}\"".WriteOverTime(0.5,0.5);
+        $"\"{s_selectedTextSet.Text}\"".NextLine().WriteOverTime(0.5,0.5);
         
         var responses = s_selectedTextSet.PlayerResponses 
                         ?? throw new ArgumentNullException(nameof(s_selectedTextSet.PlayerResponses));
@@ -65,21 +66,30 @@ public static class CharacterDialogueHelper
         }
     }
 
-    public static void CheckForValidPlayerResponse(int index)
+    public static void CheckForValidPlayerResponse()
     {
+        int index = InputHelper.GetNumericOutput();
         if (index <= 0 || index > s_currentPlayerResponses.Count) throw new ArgumentOutOfRangeException(nameof(index));
+        OutputHelper.ClearPreviousConsoleLine();
         
         s_currentPlayerResponses[index - 1].ExecutePlayerResponse();
     }
 
     private static void ExecutePlayerResponse(this PlayerResponse response)
     {
-        $"{response.Text}".WriteOverTime(0.5,0.5);
+        $"Player: \"{response.Text}\"".NextLine().WriteOverTime(0.5,0.5);
         
         var relationshipToAlter = s_playerRelationships?.FirstOrDefault(r => r.CharacterName == s_selectedCharacterName) 
                                   ?? throw new ArgumentNullException(nameof(s_selectedCharacterName));
         
+        $"Relationship: {response.RelationshipInfluence}".NextLine().WriteOverTime();
         relationshipToAlter.RelationshipLevel += response.RelationshipInfluence;
+        ExecuteNextDialogue(response.NextDialogue);
+    }
+
+    private static void ExecuteNextDialogue(this NextDialogue nextDialogue)
+    {
+        $"{s_selectedCharacterName}: \"{nextDialogue.CharacterDialogue}\"".NextLine().WriteOverTime();
     }
     
     public static void WriteOverTime(this string text, double secondsToGenerate = 1, double secondsToWaitForNext = 1)
@@ -98,27 +108,9 @@ public static class CharacterDialogueHelper
         Thread.Sleep(waitForNextTimer);
     }
 
-    public static void RunLoadingIndicator(double secondsToWaitForNext)
-    {
-        int timesLoaded = 0;
-        int waitForNextTimer = Convert.ToInt32(secondsToWaitForNext * 1000 / 3);
-        while (timesLoaded < 3)
-        {
-            ClearCurrentConsoleLine();
-            Console.Write("Loading");
-            "...".WriteOverTime(1,0);
-            timesLoaded++;
-        }
-        Console.Clear();
-    }
     
-    public static void ClearCurrentConsoleLine()
-    {
-        int currentLineCursor = Console.CursorTop;
-        Console.SetCursorPosition(0, currentLineCursor);
-        Console.Write(new string(' ', Console.WindowWidth));  // Overwrite the current line with spaces
-        Console.SetCursorPosition(0, currentLineCursor);     // Move the cursor back to the start of the line
-    }
+    
+    
 
     private static DialogueSet GetViableDialogueSet(this List<DialogueSet> sets, Relationship playerRelationship)
     {

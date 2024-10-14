@@ -6,5 +6,9 @@ namespace DialogueSystem.Domain;
 public class PlayerSave
 {
     public int SaveId { get; set; }
+    public string SaveName { get; set; }
     public List<SaveData> SavedData { get; set; }
+    public bool Archived { get; set; }
+
+    public PlayerSave Clone() => new PlayerSave { SaveId = this.SaveId, SavedData = this.SavedData };
 }
