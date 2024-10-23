@@ -26,33 +26,53 @@ public class StartGame
     public void Launch()
     {
         _logger.Log(LogLevel.Information, "StartGame Initialized");
-        LoadContent();
-        _dialogueManager.RunLoadSaveSequence();
+        RunGame();
+    }
+
+    private void RunGame()
+    {
         while (true)
         {
-            _dialogueMenu.RunCharacterDialogue();
-            CharacterDialogueHelper.CheckForValidPlayerResponse();
-            _playerController.GetCurrentSave().SavedData.First().Relationships = CharacterDialogueHelper.GetPlayerRelationships();
-        
-            "Would you like to overwrite the current save? [Y/N]".NextLine().WriteOverTime();
-
-            bool nextSave = false;
-            bool validAnswer = false;
-        
-            while (!validAnswer)
-            {
-                var saveAnswer = Console.ReadKey(true).Key;
-                if (saveAnswer is ConsoleKey.Y or ConsoleKey.N) validAnswer = true;
-                nextSave = saveAnswer == ConsoleKey.N;
-            }
-            
-            _jsonParser.SavePlayerData(_playerController.GetCurrentSave(), nextSave);
+            LoadContent();
+            PlayGame();
+            SaveGame();
+            if (!Restart()) break;
         }
     }
 
+    private void SelectMenu_View()
+    {
+        
+    }
+
+    private void Relationships_View()
+    {
+        
+    }
 
     private void LoadContent()
     {
         _jsonParser.LoadJson();
+        _dialogueManager.RunLoadSaveSequence();
+    }
+
+    private void PlayGame()
+    {
+        _dialogueMenu.RunCharacterDialogue();
+        CharacterDialogueHelper.CheckForValidPlayerResponse();
+    }
+
+    private void SaveGame()
+    {
+        _playerController.GetCurrentSave().SavedData.First().Relationships = CharacterDialogueHelper.GetPlayerRelationships();
+        "Would you like to overwrite the current save? [Y/N]".NextLine().WriteOverTime();
+        bool nextSave = InputHelper.GetYesNoOutput();
+        _jsonParser.SavePlayerData(_playerController.GetCurrentSave(), nextSave);
+    }
+
+    private bool Restart()
+    {
+        "Would you like to play again? [Y/N]".NextLine().WriteOverTime();
+        return InputHelper.GetYesNoOutput();
     }
 }
