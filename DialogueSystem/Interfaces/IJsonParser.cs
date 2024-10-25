@@ -11,5 +11,6 @@ public interface IJsonParser
     public List<PlayerSave> LoadAllPlayerSaves();
     public PlayerSave LoadPlayerSaveById(int saveId);
     public PlayerSave GetLatestPlayerSave();
-    public void SavePlayerData(PlayerSave save, bool nextSave);
+    public void SavePlayerData(PlayerSave save, bool shouldOverwrite);
+    public PlayerSave GetCurrentSave();
 }

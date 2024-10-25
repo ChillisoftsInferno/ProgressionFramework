@@ -28,9 +28,29 @@ public static class InputHelper
         return numericResult;
     }
 
-    public static bool GetConsoleKeyOutput()
+    public static void WaitForEnterKey()
     {
-        return false;
+        var key = Console.ReadKey(true);
+        while (key.Key != ConsoleKey.Enter);
+    }
+
+    public static string GetConsoleKeyOutput()
+    {
+        var key = Console.ReadKey(true).Key;
+        
+        switch (key)
+        {
+            case ConsoleKey.D:
+                break;
+            case ConsoleKey.R:
+                break;
+            case ConsoleKey.Q:
+                break;
+            default:
+                return GetConsoleKeyOutput();
+        }
+        
+        return key.ToString();
     }
 
     public static bool GetPredicateOutput()

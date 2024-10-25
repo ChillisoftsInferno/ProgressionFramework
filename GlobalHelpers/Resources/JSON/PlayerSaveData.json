@@ -1,5 +1,36 @@
 [
   {
+    "saveId": 3,
+    "saveName": "A man\u0027s best friend",
+    "savedData": [
+      {
+        "relationships": [
+          {
+            "characterName": "Alistair",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Morrigan",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Sten",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Wynne",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Dog",
+            "relationshipLevel": 100
+          }
+        ]
+      }
+    ],
+    "archived": false
+  },
+  {
     "saveId": 2,
     "saveName": "Northgard",
     "savedData": [
@@ -23,7 +54,7 @@
           },
           {
             "characterName": "Dog",
-            "relationshipLevel": 50
+            "relationshipLevel": 70
           }
         ]
       }
@@ -38,7 +69,7 @@
         "relationships": [
           {
             "characterName": "Alistair",
-            "relationshipLevel": 50
+            "relationshipLevel": 35
           },
           {
             "characterName": "Morrigan",
@@ -50,7 +81,7 @@
           },
           {
             "characterName": "Wynne",
-            "relationshipLevel": 50
+            "relationshipLevel": 55
           },
           {
             "characterName": "Dog",

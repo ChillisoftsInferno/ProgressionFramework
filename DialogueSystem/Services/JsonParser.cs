@@ -14,6 +14,8 @@ public class JsonParser : IJsonParser
 
     private string _playerSaveFilePath = "../../../../GlobalHelpers/Resources/JSON/PlayerSaveData.json";
     private string _dialogueTreeFilePath = "../../../../GlobalHelpers/Resources/JSON/RPGDialogueTree.json";
+    
+    private PlayerSave _currentSave;
 
     public JsonParser(IDialogueMenu dialogueMenu)
     {
@@ -56,6 +58,7 @@ public class JsonParser : IJsonParser
             if (playerSaves.IsNull()) throw new ArgumentNullException(nameof(playerSaves));
             var playerSave = playerSaves!.FirstOrDefault(s => s.SaveId == saveId);
             if (playerSave.IsNull()) throw new ArgumentNullException(nameof(playerSave));
+            _currentSave = playerSave!;
             return playerSave!;
         }
     }
@@ -65,11 +68,11 @@ public class JsonParser : IJsonParser
         return LoadAllPlayerSaves().OrderByDescending(s => s.SaveId).First();
     }
 
-    public void SavePlayerData(PlayerSave save, bool nextSave)
+    public void SavePlayerData(PlayerSave save, bool shouldOverwrite)
     {
         var allSaves = LoadAllPlayerSaves();
 
-        if (nextSave)
+        if (!shouldOverwrite)
         {
             int saveCount = allSaves.FirstOrDefault()?.SaveId + 1 ?? 1;
             Console.WriteLine("Please enter a save name.");
@@ -81,6 +84,7 @@ public class JsonParser : IJsonParser
                 SavedData = save.SavedData,
                 Archived = false
             };
+            _currentSave = newSave;
             allSaves.Add(newSave);
         }
         else
@@ -89,6 +93,7 @@ public class JsonParser : IJsonParser
                               throw new ArgumentNullException(nameof(save.SaveId));
             allSaves.Remove(currentSave);
             allSaves.Add(save);
+            _currentSave = currentSave;
         }
         
         var options = new JsonSerializerOptions
@@ -107,4 +112,6 @@ public class JsonParser : IJsonParser
     {
         _dialogueMenu.SetCharacterDialogues(set);
     }
+
+    public PlayerSave GetCurrentSave() => _currentSave;
 }

@@ -24,20 +24,24 @@ public class ProgressBar
     {
         string progressBarIndicator = "[";
         int increments = _currentValue / _incrementLength;
+        int barMaxValue = _maxValue / _incrementLength;
         int index = 0;
-        while (index < _maxValue)
+        while (index <= barMaxValue)
         {
             for (int i = 0; i < increments; i++)
             {
                 progressBarIndicator += "_";
-                index += _incrementLength;
+                index += 1;
             }
 
-            for (int i = index; i < _maxValue; i++)
+            for (int i = index; i < barMaxValue; i++)
             {
                 progressBarIndicator += " ";
-                index += _incrementLength;
+                index += 1;
             }
+
+            progressBarIndicator += "]";
+            index += 1;
         }
         
         return progressBarIndicator;

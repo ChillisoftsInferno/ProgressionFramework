@@ -6,4 +6,5 @@ namespace DialogueSystem.Interfaces;
 public interface IDialogueManager
 {
     public void RunLoadSaveSequence();
+    public void LoadCharacterDialogueInteractionMenu();
 }

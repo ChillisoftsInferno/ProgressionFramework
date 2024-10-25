@@ -23,6 +23,12 @@ public static class CharacterDialogueHelper
         return text;
     }
     
+    public static string TwoLines(this string text)
+    {
+        text += "\n\n";
+        return text;
+    }
+    
     public static void ExecuteCharacterDialogue(this Character character)
     {
         var characterRelationship = s_playerRelationships!.FirstOrDefault(r => r.CharacterName == character.CharacterName);
@@ -84,6 +90,7 @@ public static class CharacterDialogueHelper
         
         $"Relationship: {response.RelationshipInfluence}".NextLine().WriteOverTime();
         relationshipToAlter.RelationshipLevel += response.RelationshipInfluence;
+        if (relationshipToAlter.RelationshipLevel > 100) relationshipToAlter.RelationshipLevel = 100;
         ExecuteNextDialogue(response.NextDialogue);
     }
 
@@ -108,9 +115,15 @@ public static class CharacterDialogueHelper
         Thread.Sleep(waitForNextTimer);
     }
 
+    public static void WriteQuick(this string text)
+    {
+        text.WriteOverTime(0.1,0.1);
+    }
     
-    
-    
+    public static void WriteInstantly(this string text)
+    {
+        Console.Write(text);
+    }
 
     private static DialogueSet GetViableDialogueSet(this List<DialogueSet> sets, Relationship playerRelationship)
     {

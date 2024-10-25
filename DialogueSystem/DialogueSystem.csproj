@@ -19,4 +19,8 @@
       <ProjectReference Include="..\GlobalHelpers\GlobalHelpers.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Enums\" />
+    </ItemGroup>
+
 </Project>

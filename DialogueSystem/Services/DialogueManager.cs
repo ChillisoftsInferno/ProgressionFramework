@@ -31,8 +31,7 @@ public class DialogueManager : IDialogueManager
         {
             ExecuteNewGame();
         }
-        
-        LoadCharacterDialogueInteractionMenu();
+        Console.Clear();
     }
 
     private bool HasForExistingSaves()
@@ -59,7 +58,7 @@ public class DialogueManager : IDialogueManager
         int savedNum = 0;
         var defaultSave = _jsonParser.LoadPlayerSaveById(savedNum) ?? throw new ArgumentNullException(nameof(savedNum),"Default save not found!");
         var newSave = defaultSave.Clone();
-        _jsonParser.SavePlayerData(newSave, true);
+        _jsonParser.SavePlayerData(newSave, false);
         var latestSave = _jsonParser.GetLatestPlayerSave();
         _playerController.SetCurrentSave(latestSave);
         CharacterDialogueHelper.SetPlayerRelationships(latestSave.SavedData.First().Relationships);
@@ -85,7 +84,7 @@ public class DialogueManager : IDialogueManager
         CharacterDialogueHelper.SetPlayerRelationships(_playerController.GetCurrentSave().SavedData.First().Relationships);
     }
 
-    private void LoadCharacterDialogueInteractionMenu()
+    public void LoadCharacterDialogueInteractionMenu()
     {
         OutputHelper.RunLoadingIndicator();
         "Enter a character name to talk to them.".NextLine().WriteOverTime();
