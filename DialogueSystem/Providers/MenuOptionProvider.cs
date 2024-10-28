@@ -4,5 +4,6 @@ public static class MenuOptionProvider
 {
     public const string RelationshipMenuOption = "R";
     public const string DialogueMenuOption = "D";
+    public const string LoadMenuOption = "L";
     public const string QuitMenuOption = "Q";
 }

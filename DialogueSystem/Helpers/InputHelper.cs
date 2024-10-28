@@ -44,6 +44,8 @@ public static class InputHelper
                 break;
             case ConsoleKey.R:
                 break;
+            case ConsoleKey.L:
+                break;
             case ConsoleKey.Q:
                 break;
             default:

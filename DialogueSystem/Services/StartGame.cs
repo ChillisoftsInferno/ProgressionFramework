@@ -54,6 +54,7 @@ public class StartGame : IStartGame
         "Select a menu by entering one of the assigned symbols.".NextLine().WriteQuick();
         "[D]ialogue".NextLine().WriteQuick();
         "[R]elationships".NextLine().WriteQuick();
+        "[L]Load Game".NextLine().WriteQuick();
         "[Q]uit".NextLine().WriteQuick();
 
         string input = InputHelper.GetConsoleKeyOutput();
@@ -114,8 +115,11 @@ public class StartGame : IStartGame
             case MenuOptionProvider.DialogueMenuOption:
                 RunGame();
                 break;
-            case MenuOptionProvider.QuitMenuOption:
+            case MenuOptionProvider.LoadMenuOption:
                 Launch();
+                break;
+            case MenuOptionProvider.QuitMenuOption:
+                Environment.Exit(0);
                 break;
         }
     }

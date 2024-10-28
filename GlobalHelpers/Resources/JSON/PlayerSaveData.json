@@ -1,5 +1,36 @@
 [
   {
+    "saveId": 4,
+    "saveName": "Bjorn",
+    "savedData": [
+      {
+        "relationships": [
+          {
+            "characterName": "Alistair",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Morrigan",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Sten",
+            "relationshipLevel": 50
+          },
+          {
+            "characterName": "Wynne",
+            "relationshipLevel": 45
+          },
+          {
+            "characterName": "Dog",
+            "relationshipLevel": 50
+          }
+        ]
+      }
+    ],
+    "archived": false
+  },
+  {
     "saveId": 3,
     "saveName": "A man\u0027s best friend",
     "savedData": [
