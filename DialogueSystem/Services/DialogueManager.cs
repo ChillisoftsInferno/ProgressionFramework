@@ -4,6 +4,7 @@
 using DialogueSystem.Domain;
 using DialogueSystem.Helpers;
 using DialogueSystem.Interfaces;
+using NLog;
 
 namespace DialogueSystem.Services;
 
@@ -12,6 +13,7 @@ public class DialogueManager : IDialogueManager
     private readonly IJsonParser _jsonParser;
     private readonly IDialogueMenu _dialogueMenu;
     private readonly IPlayerController _playerController;
+    private readonly MyLogger logger = MyLogger.GetInstance();
     
     public DialogueManager(IJsonParser jsonParser, IDialogueMenu dialogueMenu, IPlayerController playerController)
     {
@@ -74,11 +76,14 @@ public class DialogueManager : IDialogueManager
 
         if (savedNum == 0)
         {
+            logger.Info($"No save files found, creating a new save file.");
             ExecuteNewGame();
         }
         else
         {
             _playerController.SetCurrentSave(_jsonParser.LoadPlayerSaveById(savedNum) ?? throw new ArgumentNullException(nameof(savedNum)));
+            var save = _playerController.GetCurrentSave();
+            logger.Info($"Attempting to load save: <Save>Name>{save.SaveName}<Name/><Id> {save.SaveId}</Id></Save>");
         }
 
         CharacterDialogueHelper.SetPlayerRelationships(_playerController.GetCurrentSave().SavedData.First().Relationships);

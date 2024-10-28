@@ -3,29 +3,34 @@ using DialogueSystem.Helpers;
 using DialogueSystem.Interfaces;
 using DialogueSystem.Providers;
 using DialogueSystem.UI.Components;
-using Microsoft.Extensions.Logging;
+using NLog;
 
 namespace DialogueSystem.Services;
 
-public class StartGame
-(
-    IJsonParser jsonParser,
-    IPlayerController playerController,
-    IDialogueManager dialogueManager,
-    IDialogueMenu dialogueMenu,
-    ILogger<StartGame> logger
-)
-    : IStartGame
+public class StartGame : IStartGame
 {
-    private readonly IJsonParser _jsonParser = jsonParser ?? throw new ArgumentNullException(nameof(jsonParser));
-    private readonly IPlayerController _playerController = playerController ?? throw new ArgumentNullException(nameof(playerController));
-    private readonly IDialogueManager _dialogueManager = dialogueManager ?? throw new ArgumentNullException(nameof(dialogueManager));
-    private readonly IDialogueMenu _dialogueMenu = dialogueMenu ?? throw new ArgumentNullException(nameof(dialogueMenu));
-    private readonly ILogger<StartGame> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+    private readonly IJsonParser _jsonParser;
+    private readonly IPlayerController _playerController;
+    private readonly IDialogueManager _dialogueManager;
+    private readonly IDialogueMenu _dialogueMenu;
+    private readonly MyLogger logger = MyLogger.GetInstance();
+
+    public StartGame
+    (
+        IJsonParser jsonParser,
+        IPlayerController playerController,
+        IDialogueManager dialogueManager,
+        IDialogueMenu dialogueMenu
+    )
+    {
+        _jsonParser = jsonParser ?? throw new ArgumentNullException(nameof(jsonParser));
+        _playerController = playerController ?? throw new ArgumentNullException(nameof(playerController));
+        _dialogueManager = dialogueManager ?? throw new ArgumentNullException(nameof(dialogueManager));
+        _dialogueMenu = dialogueMenu ?? throw new ArgumentNullException(nameof(dialogueMenu));
+    }
 
     public void Launch()
     {
-        _logger.Log(LogLevel.Information, "StartGame Initialized");
         LoadContent();
         SelectMenu_View();
     }
@@ -43,6 +48,7 @@ public class StartGame
 
     private void SelectMenu_View()
     {
+        logger.Info("Viewing Select View");
         Console.Clear();
         $"Current Save: {_jsonParser.GetCurrentSave().SaveName}".TwoLines().WriteQuick();
         "Select a menu by entering one of the assigned symbols.".NextLine().WriteQuick();
@@ -109,6 +115,7 @@ public class StartGame
                 RunGame();
                 break;
             case MenuOptionProvider.QuitMenuOption:
+                Launch();
                 break;
         }
     }

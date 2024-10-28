@@ -11,6 +11,9 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
       <PackageReference Include="Microsoft.Extensions.Hosting" />
       <PackageReference Include="Newtonsoft.Json" />
+      <PackageReference Include="NLog" />
+      <PackageReference Include="NLog.Config" />
+      <PackageReference Include="NLog.Schema" />
       <PackageReference Include="SimpleInjector.Integration.ServiceCollection" />
       <PackageReference Include="System.Security.Permissions" />
     </ItemGroup>
