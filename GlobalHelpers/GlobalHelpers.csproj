@@ -44,12 +44,18 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="CellState.cs" />
-        <Compile Include="Helpers.cs" />
+        <Compile Include="Helpers\ConsoleHelper.cs" />
+        <Compile Include="Helpers\InputHelper.cs" />
+        <Compile Include="Helpers\JsonParser.cs" />
+        <Compile Include="Helpers\NullHelper.cs" />
+        <Compile Include="Helpers\OutputHelper.cs" />
+        <Compile Include="Interfaces\IJsonParser.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="TreeDataStructure.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="Resources\JSON\Dialogue.json" />
+      <Content Include="Resources\JSON\GraphPoints.json" />
       <Content Include="Resources\JSON\PlayerSaveData.json" />
       <Content Include="Resources\JSON\PlayerSaveData_Backup.json" />
       <Content Include="Resources\JSON\RPGDialogueTree.json" />

@@ -4,6 +4,7 @@
 using DialogueSystem.Domain;
 using DialogueSystem.Helpers;
 using DialogueSystem.Interfaces;
+using GlobalHelpers.Helpers;
 using NLog;
 
 namespace DialogueSystem.Services;

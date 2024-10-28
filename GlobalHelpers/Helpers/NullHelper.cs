@@ -2,9 +2,9 @@
 // The .NET Foundation licenses this
 
 #nullable enable
-namespace GlobalHelpers;
+namespace GlobalHelpers.Helpers;
 
-public static class Helpers
+public static class NullHelper
 {
     public static bool IsNull(this object? data) => data == null;
 }

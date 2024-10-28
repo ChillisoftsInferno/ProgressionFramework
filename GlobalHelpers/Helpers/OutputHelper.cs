@@ -1,7 +1,9 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this
 
-namespace DialogueSystem.Helpers;
+using System;
+
+namespace GlobalHelpers.Helpers;
 
 public static class OutputHelper
 {

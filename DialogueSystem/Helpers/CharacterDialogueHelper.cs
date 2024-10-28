@@ -1,5 +1,6 @@
 using DialogueSystem.Domain;
 using GlobalHelpers;
+using GlobalHelpers.Helpers;
 
 namespace DialogueSystem.Helpers;
 
@@ -16,18 +17,6 @@ public static class CharacterDialogueHelper
     }
 
     public static List<Relationship> GetPlayerRelationships() => s_playerRelationships ?? throw new ArgumentNullException(nameof(s_playerRelationships));
-    
-    public static string NextLine(this string text)
-    {
-        text += "\n";
-        return text;
-    }
-    
-    public static string TwoLines(this string text)
-    {
-        text += "\n\n";
-        return text;
-    }
     
     public static void ExecuteCharacterDialogue(this Character character)
     {
@@ -99,31 +88,7 @@ public static class CharacterDialogueHelper
         $"{s_selectedCharacterName}: \"{nextDialogue.CharacterDialogue}\"".NextLine().WriteOverTime();
     }
     
-    public static void WriteOverTime(this string text, double secondsToGenerate = 1, double secondsToWaitForNext = 1)
-    {
-        int waitForNextTimer = Convert.ToInt32(secondsToWaitForNext * 1000) / 2;
-        int timePerChar = Convert.ToInt32(secondsToGenerate * 1000 / text.Length);
-        
-        int counter = text.Length;
-        int currentIndex = 0;
-        while (currentIndex < counter)
-        {
-            Console.Write(text[currentIndex]);
-            Thread.Sleep(timePerChar);
-            currentIndex++;
-        }
-        Thread.Sleep(waitForNextTimer);
-    }
-
-    public static void WriteQuick(this string text)
-    {
-        text.WriteOverTime(0.1,0.1);
-    }
     
-    public static void WriteInstantly(this string text)
-    {
-        Console.Write(text);
-    }
 
     private static DialogueSet GetViableDialogueSet(this List<DialogueSet> sets, Relationship playerRelationship)
     {

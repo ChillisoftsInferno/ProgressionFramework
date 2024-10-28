@@ -3,6 +3,7 @@ using DialogueSystem.Helpers;
 using DialogueSystem.Interfaces;
 using DialogueSystem.Providers;
 using DialogueSystem.UI.Components;
+using GlobalHelpers.Helpers;
 using NLog;
 
 namespace DialogueSystem.Services;
