@@ -10,8 +10,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife", "GameOfLife\Ga
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DialogueSystem", "DialogueSystem\DialogueSystem.csproj", "{075E4425-646F-48FF-8035-43071ADEE493}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionExample", "DependencyInjectionExample\DependencyInjectionExample.csproj", "{1794439D-C3F7-4345-A897-144858913C1D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericDataStructures", "GenericDataStructures\GenericDataStructures.csproj", "{BE3A84A4-4D13-4484-906D-940E2C91F83C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadFirstDesignPatterns", "HeadFirstDesignPatterns\HeadFirstDesignPatterns.csproj", "{E88D1016-6B9C-4893-A7DA-F6AC7EB97001}"
@@ -42,10 +40,6 @@ Global
 		{075E4425-646F-48FF-8035-43071ADEE493}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{075E4425-646F-48FF-8035-43071ADEE493}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{075E4425-646F-48FF-8035-43071ADEE493}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1794439D-C3F7-4345-A897-144858913C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1794439D-C3F7-4345-A897-144858913C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1794439D-C3F7-4345-A897-144858913C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1794439D-C3F7-4345-A897-144858913C1D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE3A84A4-4D13-4484-906D-940E2C91F83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE3A84A4-4D13-4484-906D-940E2C91F83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE3A84A4-4D13-4484-906D-940E2C91F83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
