@@ -2,9 +2,11 @@
 // The .NET Foundation licenses this
 
 using DependencyInjectionExample.Services;
+using NUnit.Framework;
 
 namespace DependencyInjectionExample.MockControllers;
 
+[TestFixture]
 public class TestController
 {
     private readonly RandomNumberService _randomNumberService1;
@@ -20,6 +22,7 @@ public class TestController
         _randomNumberService2 = randomNumberService2;
     }
 
+    [Test(ExpectedResult = null)]
     public MockResponse GetRandomNumber()
     {
         return new MockResponse()

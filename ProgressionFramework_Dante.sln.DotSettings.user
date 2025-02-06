@@ -1,22 +1,22 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAssert_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F46a322d26154b982566e1817203e5452c91223f93b0e392d9c5b4806696fdc1_003FAssert_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003APoint_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F92c5d93ee7697f33bf743846c94f1ef4d13fce17cf06ba4fb9b7bab29afc516_003FPoint_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ARegex_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F3c1b6763a4f99f107cb29a9d8ab1bfa6cbc2b6d6e3dc6966595ab9d5f6dd_003FRegex_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AThrowHelper_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F2c8e7ca976f350cba9836d5565dac56b11e0b56656fa786460eb1395857a6fa_003FThrowHelper_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:Boolean x:Key="/Default/CodeStyle/Naming/CSharpNaming/ApplyAutoDetectedRules/@EntryValue">False</s:Boolean>
-	
-	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7f08d216_002D65ce_002D4536_002D8669_002D78b9c12323ee/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GivenStringValues_ShouldLoopThroughList_ReturnContainingValuesStartingWithSE" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Solution /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d6284d46_002D506a_002D4b55_002Dadd2_002D2cac2e7253d8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Looping" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=72d8770c_002D044c_002D4766_002Dbc43_002D0099254bb720/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestDictionary2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Looping&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables+Strings.GivenAWord_TestHowManySpecificCharactersAreInWord_ReturnNewStringContainingOnlyCharacters&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables+Strings.GivenASentence_TestVowelsInSentence_ReturnNewStringContainingVowelsInOrderIncludingSpaces&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables+Strings.GivenASentence_TestVowelsInSentence_ReturnNewStringContainingNoVowelsInOrderIncludingSpaces&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables+Strings.TestStringLength_ShouldReturnLength&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Variables&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.DotNet_Basics.Operators+OperatorTests.TestOperator_LogicalOr_ShouldReturnTrueIfEitherTrue&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.Katas.Tests.TestDidYouMeanKata.TestDictionary2&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.Katas.Tests.TestDidYouMeanKata.TestDictionary1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.Katas.StringKata+TestStringCalculatorKata.Add_GivenOneNumber_ShouldReturnThatNumber&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.Katas.StringKata+TestStringCalculatorKata.Add_GivenNoNumbers_ShouldReturnZero&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::44A4655A-6D52-43DE-8966-B403B1316BE4::net8.0::ProgressionFramework_Dante_Level0.Katas.StringKata+TestStringCalculatorKata.Add_GiveManyNumbers_ShouldReturnTheSumOfThoseNumbers&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=aeiou/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=frmr/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=jmpd/@EntryIndexedValue">True</s:Boolean>

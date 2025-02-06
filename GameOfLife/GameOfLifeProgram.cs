@@ -27,7 +27,7 @@ public static class GameOfLifeProgram
         
         s_gameManager = new GameManager(s_map);
         s_gameManager.SetCellPositions();
-        s_gameManager.SetStartingCells(SetSecondStartingPositions());
+        s_gameManager.SetStartingCells(SetRandomPositions(40));
 
         s_startingPositions = new List<Position>();
 
@@ -138,6 +138,20 @@ public static class GameOfLifeProgram
             new (8,7),
             new (6,8),
         };
+    }
+
+    private static List<Position> SetRandomPositions(int amountOfPositions)
+    {
+        var positions = new List<Position>();
+
+        for (int i = 0; i < amountOfPositions; i++)
+        {
+            var xPos = new Random().Next(0, s_mapWidth);
+            var yPos = new Random().Next(0, s_mapHeight);
+            positions.Add(new Position(xPos, yPos));
+        }
+
+        return positions;
     }
     
     private static void UpdateMap()

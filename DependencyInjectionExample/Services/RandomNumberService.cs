@@ -5,7 +5,7 @@ namespace DependencyInjectionExample.Services;
 
 public class RandomNumberService
 {
-    public readonly int _randomNumber;
+    private readonly int _randomNumber;
 
     public RandomNumberService()
     {

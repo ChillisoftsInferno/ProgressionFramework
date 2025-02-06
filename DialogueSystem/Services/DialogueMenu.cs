@@ -19,7 +19,12 @@ public class DialogueMenu : IDialogueMenu
         Console.Write("\nCharacter Name: ");
         string characterName = InputHelper.GetTextOutput();
         var selectedCharacter = _characterDialogues.FirstOrDefault(c => c.CharacterName == characterName);
-        if (selectedCharacter == null) return;
+        if (selectedCharacter == null)
+        {
+            Console.Write("\nInvalid character name. Please try again.");
+            RunCharacterDialogue();
+            return;
+        }
         
         selectedCharacter.ExecuteCharacterDialogue();        
     }
