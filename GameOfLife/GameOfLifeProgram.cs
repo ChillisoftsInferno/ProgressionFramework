@@ -4,8 +4,8 @@ namespace GameOfLife;
 
 public static class GameOfLifeProgram
 {
-    private static int s_mapWidth = 15;
-    private static int s_mapHeight = 15;
+    private static int s_mapWidth = 32;
+    private static int s_mapHeight = 32;
     private static readonly Map s_map = new Map(s_mapWidth, s_mapHeight);
 
     private static Drawing s_drawing = null!;
@@ -16,9 +16,13 @@ public static class GameOfLifeProgram
 
     private static int generationCount = 0;
 
+    private static readonly object s_lockObj = new object();
+    private static bool s_isRunning = true;
+
     static GameOfLifeProgram()
     {
         InitializeGame();
+        Console.CursorVisible = false;
     }
 
     private static void InitializeGame()
@@ -27,7 +31,7 @@ public static class GameOfLifeProgram
         
         s_gameManager = new GameManager(s_map);
         s_gameManager.SetCellPositions();
-        s_gameManager.SetStartingCells(SetRandomPositions(40));
+        s_gameManager.SetStartingCells(SimulationConfigurations.SetStartingPositions(Configurations.FourWayPeriodFiveOscillator));
 
         s_startingPositions = new List<Position>();
 
@@ -36,123 +40,74 @@ public static class GameOfLifeProgram
     
     public static void Main(string[] args)
     {
+        // Start a separate thread to listen for key presses
+        Thread inputThread = new Thread(CheckForPause);
+        inputThread.IsBackground = true;
+        inputThread.Start();
+        
         while (true)
         {
-            generationCount++;
             int populationCount = GetPopulationCount();
-            Thread.Sleep(100);
-            Console.Clear();
-            s_drawing.DrawMap();
-            UpdateMap();
-            
-            //Console.WriteLine("Press Q to Quit. Press any key to skip to next generation.");
-            // switch (Console.ReadKey(true).Key)
-            // {
-            //     case ConsoleKey.Q:
-            //         return;
-            //     case ConsoleKey.D:
-            //         PrintCellsDied();
-            //         s_map.ResetCellsDied();
-            //         break;
-            //     case ConsoleKey.B:
-            //         PrintCellsBorn();
-            //         s_map.ResetCellsBorn();
-            //         break;
-            // }
+
+            lock (s_lockObj)
+            {
+                if (!s_isRunning)
+                {
+                    Console.WriteLine("[Q]uit\n" +
+                                      "[D]ead Cells\n" +
+                                      "[B]orn Cells\n" +
+                                      "[C]ontinue\n");
+                    switch (Console.ReadKey(true).Key)
+                    {
+                        case ConsoleKey.Q:
+                            return;
+                        case ConsoleKey.D:
+                            PrintCellsDied();
+                            s_map.ResetCellsDied();
+                            break;
+                        case ConsoleKey.B:
+                            PrintCellsBorn();
+                            s_map.ResetCellsBorn();
+                            break;
+                        case ConsoleKey.C:
+                            s_isRunning = true;
+                            break;
+                    }
+                }
+
+                generationCount++;
+                Thread.Sleep(100);
+                Console.Clear();
+                s_drawing.DrawMap();
+                UpdateMap();
+            }
             
             Console.WriteLine($"Generation: {generationCount}");
             Console.WriteLine($"Population: {populationCount}");
+            Console.WriteLine($"Press Spacebar to pause the game.");
             if(populationCount <= 0) break;
             
             s_map.ResetCellsBorn();
             s_map.ResetCellsDied();
         }
     }
-
-    private static List<Position> SetStartingPositions()
+    
+    static void CheckForPause()
     {
-        return new List<Position>()
+        while (true)
         {
-            new (3,3),
-            new (3,4),
-            new (3,5),
-            new (3,6),
-            new (3,7),
-            new (3,8),
-            new (4,3),
-            new (4,4),
-            new (4,5),
-            new (4,6),
-            new (4,7),
-            new (4,8),
-            
-            new (3,10),
-            new (3,11),
-            new (4,10),
-            new (4,11),
-            new (5,10),
-            new (5,11),
-            new (6,10),
-            new (6,11),
-            new (7,10),
-            new (7,11),
-            new (8,10),
-            new (8,11),
-            
-            new (10,6),
-            new (10,7),
-            new (10,8),
-            new (10,9),
-            new (10,10),
-            new (10,11),
-            new (11,6),
-            new (11,7),
-            new (11,8),
-            new (11,9),
-            new (11,10),
-            new (11,11),
-            
-            new (6,3),
-            new (6,4),
-            new (7,3),
-            new (7,4),
-            new (8,3),
-            new (8,4),
-            new (9,3),
-            new (9,4),
-            new (10,3),
-            new (10,4),
-            new (11,3),
-            new (11,4),
-        };
-    }
-
-    private static List<Position> SetSecondStartingPositions()
-    {
-        return new List<Position>()
-        {
-            new (6,6),
-            new (7,6),
-            new (7,7),
-            new (7,8),
-            new (8,7),
-            new (6,8),
-        };
-    }
-
-    private static List<Position> SetRandomPositions(int amountOfPositions)
-    {
-        var positions = new List<Position>();
-
-        for (int i = 0; i < amountOfPositions; i++)
-        {
-            var xPos = new Random().Next(0, s_mapWidth);
-            var yPos = new Random().Next(0, s_mapHeight);
-            positions.Add(new Position(xPos, yPos));
+            if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
+            {
+                lock (s_lockObj)
+                {
+                    s_isRunning = !s_isRunning; // Toggle pause state
+                    Console.WriteLine(s_isRunning ? "Resumed" : "Paused");
+                }
+            }
         }
-
-        return positions;
     }
+
+    
     
     private static void UpdateMap()
     {
