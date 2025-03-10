@@ -31,7 +31,7 @@ public static class GameOfLifeProgram
         
         s_gameManager = new GameManager(s_map);
         s_gameManager.SetCellPositions();
-        s_gameManager.SetStartingCells(SimulationConfigurations.SetStartingPositions(Configurations.FourWayPeriodFiveOscillator));
+        s_gameManager.SetStartingCells(SimulationConfigurations.SetStartingPositions(Configurations.SmallHeart));
 
         s_startingPositions = new List<Position>();
 
