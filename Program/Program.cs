@@ -9,9 +9,9 @@ public static class Program
     public static void Main(string[] args)
     {
         //JSON and Tree Data Structure
-        JsonReader jsonReader = new JsonReader();
-        jsonReader.LoadJson();
-        RunDialogue(jsonReader);
+        //JsonReader jsonReader = new JsonReader();
+        //jsonReader.LoadJson();
+        //RunDialogue(jsonReader);
         //RunTreeDataStructure(jsonReader);
         
         //Creating Hash Codes
@@ -22,6 +22,8 @@ public static class Program
         // Console.WriteLine(EnumHelper.RandomizeStatus().Value());
         // Console.WriteLine(EnumHelper.RandomizeStatus().Value());
         // Console.WriteLine(EnumHelper.RandomizeStatus().Value());
+
+        RunDoubleCurrentNum();
     }
 
     private static void RunDialogue(JsonReader jsonReader)
@@ -114,14 +116,18 @@ public static class Program
         return children;
     }
 
-    private static void RunHashsetExample()
+    private static async void RunHashsetExample()
     {
-        Console.WriteLine("Random generated hashed entries.");
-        Hasher hasher = new Hasher(5,false,10, 8);
+        const int maxHashes = 5;
+        const int randomHashes = 10;
+        const int randomHashLength = 8;
+        
+        Console.WriteLine("Randomly generated hashed entries.");
+        Hasher hasher = new Hasher(maxHashes,false,randomHashes, randomHashLength);
         hasher.SetIsGenerating(true);
         Console.WriteLine();
         
-        Console.WriteLine("Generate your own hash codes with custom input data.");
+        Console.WriteLine($"Generate {maxHashes} of your own hash codes by inputting {maxHashes} different data values.");
         while (hasher.GetIsGenerating())
         {
             string result = CustomConsole.Ensure().ToUpper();
@@ -135,7 +141,23 @@ public static class Program
             string convertedData = CustomConsole.Ensure();
             Console.WriteLine($"Data: {hasher.GetCodeByHash(convertedData)}");
             Console.WriteLine("Press 'Enter' to search for another value and 'Q' to quit.");
-            if (Console.ReadKey(true).Key == ConsoleKey.Q) break;
+            var result = await GetInputAsync();
+            if (result == ConsoleKey.Q) break;
         }
+    }
+
+    private static void RunDoubleCurrentNum()
+    {
+        var number = 1;
+        for (int i = 0; i < 30; i++)
+        {
+            number *= 2;
+            Console.WriteLine($"{i + 1}. Amount: R{number}");
+        }
+    }
+
+    private static async Task<ConsoleKey> GetInputAsync()
+    {
+        return await Task.FromResult(Console.ReadKey(true).Key);
     }
 }
