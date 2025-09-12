@@ -40,7 +40,7 @@ public class TestJsonSerializingAndDeserializing
             // Assert
             nodeValuesList.Should().NotBeNull();
             nodeValuesList.Should().HaveCount(12);
-            nodeValuesList!.First().NodeId.Should().Be(1);
+            nodeValuesList.First().NodeId.Should().Be(1);
             nodeValuesList.First().FirstValue.Should().Be(67);
             nodeValuesList.First().SecondValue.Should().Be(563);
         }
@@ -97,7 +97,7 @@ public class TestJsonSerializingAndDeserializing
 
             // Assert
             result.Should().NotBeNull();
-            result!.Value.NodeId.Should().Be(10);
+            result.Value.NodeId.Should().Be(10);
         }
 
         [Test]
