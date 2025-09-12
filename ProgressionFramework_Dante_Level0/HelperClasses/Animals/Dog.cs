@@ -18,6 +18,6 @@ public class Dog : Animal, IAnimal, IWalker
     }
     public override string Speak()
     {
-        return "Unknown sound";
+        return "Bark";
     }
 }
