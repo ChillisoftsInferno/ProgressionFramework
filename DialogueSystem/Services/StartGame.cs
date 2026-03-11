@@ -4,7 +4,6 @@ using DialogueSystem.Interfaces;
 using DialogueSystem.Providers;
 using DialogueSystem.UI.Components;
 using GlobalHelpers.Helpers;
-using NLog;
 
 namespace DialogueSystem.Services;
 
@@ -14,7 +13,6 @@ public class StartGame : IStartGame
     private readonly IPlayerController _playerController;
     private readonly IDialogueManager _dialogueManager;
     private readonly IDialogueMenu _dialogueMenu;
-    private readonly MyLogger logger = MyLogger.GetInstance();
 
     public StartGame
     (
@@ -49,7 +47,6 @@ public class StartGame : IStartGame
 
     private void SelectMenu_View()
     {
-        logger.Info("Viewing Select View");
         Console.Clear();
         $"Current Save: {_jsonParser.GetCurrentSave().SaveName}".TwoLines().WriteQuick();
         "Select a menu by entering one of the assigned symbols.".NextLine().WriteQuick();

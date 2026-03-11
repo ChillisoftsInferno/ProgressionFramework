@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DialogueSystem", "DialogueS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadFirstDesignPatterns", "HeadFirstDesignPatterns\HeadFirstDesignPatterns.csproj", "{E88D1016-6B9C-4893-A7DA-F6AC7EB97001}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressionFramework_Dante_Level1", "ProgressionFramework_Dante_Level1\ProgressionFramework_Dante_Level1.csproj", "{2B7BE0A9-7EDA-4CF9-8C6D-BE774366031A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{E88D1016-6B9C-4893-A7DA-F6AC7EB97001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E88D1016-6B9C-4893-A7DA-F6AC7EB97001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E88D1016-6B9C-4893-A7DA-F6AC7EB97001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7BE0A9-7EDA-4CF9-8C6D-BE774366031A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7BE0A9-7EDA-4CF9-8C6D-BE774366031A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7BE0A9-7EDA-4CF9-8C6D-BE774366031A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7BE0A9-7EDA-4CF9-8C6D-BE774366031A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

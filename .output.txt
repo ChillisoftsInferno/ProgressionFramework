@@ -1,0 +1,215 @@
+
+    Directory:
+    D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Level1
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     14:00                bin
+d-----        2026/03/11     15:36                DataStructures
+d-----        2026/03/11     16:27                Json
+d-----        2026/03/11     16:21                obj
+d-----        2026/03/11     16:19                Tests
+-a----        2026/03/11     16:24            972 Program.cs
+-a----        2026/03/11     16:18            388 ProgressionFramework_Dante_Le
+                                                  vel1.csproj
+    Directory:
+    D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Level1\bin
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     14:00                Debug
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\bin\Debug
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     16:25                net10.0
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\bin\Debug\net10.0
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     15:34                runtimes
+-a----        2026/03/11     16:19          27198 DialogueSystem.deps.json
+-a----        2026/03/11     14:53          28160 DialogueSystem.dll
+-a----        2026/03/11     14:53         151552 DialogueSystem.exe
+-a----        2026/03/11     14:53          23608 DialogueSystem.pdb
+-a----        2026/03/11     16:19            268 DialogueSystem.runtimeconfig.
+                                                  json
+-a----        2026/03/11     14:53           9216 GlobalHelpers.dll
+-a----        2026/03/11     14:53          34304 GlobalHelpers.pdb
+-a----        2023/10/31     16:59          27936 Microsoft.Extensions.Configur
+                                                  ation.Abstractions.dll
+-a----        2024/06/13     21:35          42784 Microsoft.Extensions.Configur
+                                                  ation.Binder.dll
+-a----        2023/10/31     16:59          24736 Microsoft.Extensions.Configur
+                                                  ation.CommandLine.dll
+-a----        2023/10/31     16:59          43800 Microsoft.Extensions.Configur
+                                                  ation.dll
+-a----        2023/10/31     16:59          21280 Microsoft.Extensions.Configur
+                                                  ation.EnvironmentVariables.dl
+                                                  l
+-a----        2024/06/13     21:36          27936 Microsoft.Extensions.Configur
+                                                  ation.FileExtensions.dll
+-a----        2024/09/17     01:10          26920 Microsoft.Extensions.Configur
+                                                  ation.Json.dll
+-a----        2024/09/17     01:10          25384 Microsoft.Extensions.Configur
+                                                  ation.UserSecrets.dll
+-a----        2024/09/17     01:09          63768 Microsoft.Extensions.Dependen
+                                                  cyInjection.Abstractions.dll
+-a----        2024/09/17     01:09          92952 Microsoft.Extensions.Dependen
+                                                  cyInjection.dll
+-a----        2024/09/17     01:10          30480 Microsoft.Extensions.Diagnost
+                                                  ics.Abstractions.dll
+-a----        2024/09/17     01:10          35592 Microsoft.Extensions.Diagnost
+                                                  ics.dll
+-a----        2023/10/31     16:59          22176 Microsoft.Extensions.FileProv
+                                                  iders.Abstractions.dll
+-a----        2023/10/31     16:59          44808 Microsoft.Extensions.FileProv
+                                                  iders.Physical.dll
+-a----        2023/10/31     16:58          45848 Microsoft.Extensions.FileSyst
+                                                  emGlobbing.dll
+-a----        2024/09/17     01:10          51472 Microsoft.Extensions.Hosting.
+                                                  Abstractions.dll
+-a----        2024/09/17     01:10          72488 Microsoft.Extensions.Hosting.
+                                                  dll
+-a----        2024/09/17     01:09          65320 Microsoft.Extensions.Logging.
+                                                  Abstractions.dll
+-a----        2024/09/17     01:10          27912 Microsoft.Extensions.Logging.
+                                                  Configuration.dll
+-a----        2024/09/17     01:10          71464 Microsoft.Extensions.Logging.
+                                                  Console.dll
+-a----        2024/09/17     01:10          20248 Microsoft.Extensions.Logging.
+                                                  Debug.dll
+-a----        2024/09/17     01:10          50976 Microsoft.Extensions.Logging.
+                                                  dll
+-a----        2024/09/17     01:10          25760 Microsoft.Extensions.Logging.
+                                                  EventLog.dll
+-a----        2024/09/17     01:10          34568 Microsoft.Extensions.Logging.
+                                                  EventSource.dll
+-a----        2023/10/31     16:59          22688 Microsoft.Extensions.Options.
+                                                  ConfigurationExtensions.dll
+-a----        2024/01/18     05:05          64776 Microsoft.Extensions.Options.
+                                                  dll
+-a----        2023/10/31     16:58          43680 Microsoft.Extensions.Primitiv
+                                                  es.dll
+-a----        2021/03/17     22:03         701992 Newtonsoft.Json.dll
+-a----        2021/03/17     21:58         710224 Newtonsoft.Json.xml
+-a----        2026/03/11     16:21          27652 ProgressionFramework_Dante_Le
+                                                  vel1.deps.json
+-a----        2026/03/11     16:25          14848 ProgressionFramework_Dante_Le
+                                                  vel1.dll
+-a----        2026/03/11     16:25         162816 ProgressionFramework_Dante_Le
+                                                  vel1.exe
+-a----        2026/03/11     16:25          18064 ProgressionFramework_Dante_Le
+                                                  vel1.pdb
+-a----        2026/03/11     16:21            270 ProgressionFramework_Dante_Le
+                                                  vel1.runtimeconfig.json
+-a----        2024/09/17     01:09          51992 System.Diagnostics.EventLog.d
+                                                  ll
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\bin\Debug\net10.0\runtimes
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     15:34                win
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\bin\Debug\net10.0\runtimes\win
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     15:34                lib
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\bin\Debug\net10.0\runtimes\win\lib
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     15:34                net8.0
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\bin\Debug\net10.0\runtimes\win\lib\net8.0
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2024/09/17     01:10         172704 System.Diagnostics.EventLog.d
+                                                  ll
+-a----        2024/09/17     01:10         801080 System.Diagnostics.EventLog.M
+                                                  essages.dll
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\DataStructures
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2026/03/11     15:34           2072 CustomLinkedList.cs
+-a----        2026/03/11     15:34           1694 CustomQueue.cs
+-a----        2026/03/11     15:34           1215 CustomStack.cs
+-a----        2026/03/11     15:36           1664 DataStructureConverter.cs
+    Directory:
+    D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Level1\Json
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2026/03/11     16:19           1152 Deserialization.cs
+-a----        2026/03/11     16:11            979 JsonManager.cs
+-a----        2026/03/11     16:27            452 Serialization.cs
+    Directory:
+    D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Level1\obj
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     14:00                Debug
+-a----        2026/03/11     16:21          25938 ProgressionFramework_Dante_Le
+                                                  vel1.csproj.nuget.dgspec.json
+-a----        2026/03/11     15:09           1743 ProgressionFramework_Dante_Le
+                                                  vel1.csproj.nuget.g.props
+-a----        2026/03/11     15:09           1549 ProgressionFramework_Dante_Le
+                                                  vel1.csproj.nuget.g.targets
+-a----        2026/03/11     16:21          96889 project.assets.json
+-a----        2026/03/11     16:21           4601 project.nuget.cache
+-a----        2026/03/11     15:09          16729 project.packagespec.json
+-a----        2026/03/11     16:19             20 rider.project.model.nuget.inf
+                                                  o
+-a----        2026/03/11     16:21             20 rider.project.restore.info
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\obj\Debug
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     16:25                net10.0
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\obj\Debug\net10.0
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2026/03/11     14:03                ref
+d-----        2026/03/11     14:03                refint
+-a----        2026/03/11     14:00            200 .NETCoreApp,Version=v10.0.Ass
+                                                  emblyAttributes.cs
+-a----        2026/03/11     16:25         162816 apphost.exe
+-a----        2026/03/11     15:34              0 Progress.4B6E6C7D.Up2Date
+-a----        2026/03/11     14:00           1073 ProgressionFramework_Dante_Le
+                                                  vel1.AssemblyInfo.cs
+-a----        2026/03/11     14:00             66 ProgressionFramework_Dante_Le
+                                                  vel1.AssemblyInfoInputs.cache
+-a----        2026/03/11     16:21          21189 ProgressionFramework_Dante_Le
+                                                  vel1.assets.cache
+-a----        2026/03/11     16:21          17823 ProgressionFramework_Dante_Le
+                                                  vel1.csproj.AssemblyReference
+                                                  .cache
+-a----        2026/03/11     15:51             66 ProgressionFramework_Dante_Le
+                                                  vel1.csproj.CoreCompileInputs
+                                                  .cache
+-a----        2026/03/11     15:34           7212 ProgressionFramework_Dante_Le
+                                                  vel1.csproj.FileListAbsolute.
+                                                  txt
+-a----        2026/03/11     16:25          14848 ProgressionFramework_Dante_Le
+                                                  vel1.dll
+-a----        2026/03/11     14:00            836 ProgressionFramework_Dante_Le
+                                                  vel1.GeneratedMSBuildEditorCo
+                                                  nfig.editorconfig
+-a----        2026/03/11     14:03             66 ProgressionFramework_Dante_Le
+                                                  vel1.genruntimeconfig.cache
+-a----        2026/03/11     14:00            239 ProgressionFramework_Dante_Le
+                                                  vel1.GlobalUsings.g.cs
+-a----        2026/03/11     16:25          18064 ProgressionFramework_Dante_Le
+                                                  vel1.pdb
+-a----        2026/03/11     14:03            174 ProgressionFramework_Dante_Le
+                                                  vel1.sourcelink.json
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\obj\Debug\net10.0\ref
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2026/03/11     16:25          10240 ProgressionFramework_Dante_Le
+                                                  vel1.dll
+    Directory: D:\Projects\ProgressionFramework\ProgressionFramework_Dante_Leve
+    l1\obj\Debug\net10.0\refint
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        2026/03/11     16:25          10240 ProgressionFramework_Dante_Le
+                                                  vel1.dll

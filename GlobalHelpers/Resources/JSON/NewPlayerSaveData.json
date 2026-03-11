@@ -1,0 +1,188 @@
+[
+  {
+    "SaveId": 5,
+    "SaveName": "Andrew\u0027s Save",
+    "SavedData": [
+      {
+        "Relationships": [
+          {
+            "CharacterName": "Alistair",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Morrigan",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Sten",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Wynne",
+            "RelationshipLevel": 100
+          },
+          {
+            "CharacterName": "Dog",
+            "RelationshipLevel": 85
+          }
+        ]
+      }
+    ],
+    "Archived": false
+  },
+  {
+    "SaveId": 4,
+    "SaveName": "Bjorn",
+    "SavedData": [
+      {
+        "Relationships": [
+          {
+            "CharacterName": "Alistair",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Morrigan",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Sten",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Wynne",
+            "RelationshipLevel": 45
+          },
+          {
+            "CharacterName": "Dog",
+            "RelationshipLevel": 50
+          }
+        ]
+      }
+    ],
+    "Archived": false
+  },
+  {
+    "SaveId": 3,
+    "SaveName": "A man\u0027s best friend",
+    "SavedData": [
+      {
+        "Relationships": [
+          {
+            "CharacterName": "Alistair",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Morrigan",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Sten",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Wynne",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Dog",
+            "RelationshipLevel": 90
+          }
+        ]
+      }
+    ],
+    "Archived": false
+  },
+  {
+    "SaveId": 2,
+    "SaveName": "Northgard",
+    "SavedData": [
+      {
+        "Relationships": [
+          {
+            "CharacterName": "Alistair",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Morrigan",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Sten",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Wynne",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Dog",
+            "RelationshipLevel": 70
+          }
+        ]
+      }
+    ],
+    "Archived": false
+  },
+  {
+    "SaveId": 1,
+    "SaveName": "Alistair\u0027s Demise",
+    "SavedData": [
+      {
+        "Relationships": [
+          {
+            "CharacterName": "Alistair",
+            "RelationshipLevel": 35
+          },
+          {
+            "CharacterName": "Morrigan",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Sten",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Wynne",
+            "RelationshipLevel": 55
+          },
+          {
+            "CharacterName": "Dog",
+            "RelationshipLevel": 50
+          }
+        ]
+      }
+    ],
+    "Archived": false
+  },
+  {
+    "SaveId": 0,
+    "SaveName": "DEFAULT",
+    "SavedData": [
+      {
+        "Relationships": [
+          {
+            "CharacterName": "Alistair",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Morrigan",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Sten",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Wynne",
+            "RelationshipLevel": 50
+          },
+          {
+            "CharacterName": "Dog",
+            "RelationshipLevel": 50
+          }
+        ]
+      }
+    ],
+    "Archived": true
+  }
+]

@@ -2,7 +2,6 @@ using System.Text.Json;
 using DialogueSystem.Domain;
 using DialogueSystem.Interfaces;
 using GlobalHelpers.Helpers;
-using Newtonsoft.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace DialogueSystem.Services;
@@ -27,7 +26,7 @@ public class JsonParser : IJsonParser
         {
             string json = r.ReadToEnd();
             
-            List<Character>? charactersList = JsonConvert.DeserializeObject<List<Character>>(json);
+            List<Character>? charactersList = JsonSerializer.Deserialize<List<Character>>(json);
             if (charactersList != null)
             {
                 SetCharacterList(charactersList);
@@ -41,7 +40,7 @@ public class JsonParser : IJsonParser
         {
             string json = r.ReadToEnd();
 
-            List<PlayerSave>? playerSaves = JsonConvert.DeserializeObject<List<PlayerSave>>(json);
+            List<PlayerSave>? playerSaves = JsonSerializer.Deserialize<List<PlayerSave>>(json);
             if (playerSaves.IsNull()) throw new ArgumentNullException(nameof(playerSaves));
             return playerSaves!;
         }
@@ -53,7 +52,7 @@ public class JsonParser : IJsonParser
         {
             string json = r.ReadToEnd();
 
-            List<PlayerSave>? playerSaves = JsonConvert.DeserializeObject<List<PlayerSave>>(json);
+            List<PlayerSave>? playerSaves = JsonSerializer.Deserialize<List<PlayerSave>>(json);
             if (playerSaves.IsNull()) throw new ArgumentNullException(nameof(playerSaves));
             var playerSave = playerSaves!.FirstOrDefault(s => s.SaveId == saveId);
             if (playerSave.IsNull()) throw new ArgumentNullException(nameof(playerSave));

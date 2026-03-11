@@ -1,8 +1,5 @@
-﻿using DialogueSystem.Domain;
-using DialogueSystem.Interfaces;
+﻿using DialogueSystem.Interfaces;
 using DialogueSystem.Services;
-using GlobalHelpers.Helpers;
-using GlobalHelpers.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
