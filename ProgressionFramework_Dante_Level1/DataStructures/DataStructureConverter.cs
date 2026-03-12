@@ -15,9 +15,6 @@ public static class DataStructureConverter
     public static CustomStack<T> ToStack<T>(IEnumerable<T> source)
     {
         var stack = new CustomStack<T>();
-        // To maintain order when converting from another collection, 
-        // we might want to consider the source order.
-        // If we just Push everything, the last item in 'source' will be at the top.
         foreach (var item in source)
         {
             stack.Push(item);
